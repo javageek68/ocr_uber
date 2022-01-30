@@ -78,6 +78,7 @@ namespace uber_ocr
             this.btnStart.TabIndex = 0;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Visible = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // txtOutput
@@ -404,7 +405,7 @@ namespace uber_ocr
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.btnStart);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Uber OCR";
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).EndInit();
             this.gbForm.ResumeLayout(false);
             this.gbForm.PerformLayout();

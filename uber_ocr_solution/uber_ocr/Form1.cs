@@ -361,8 +361,8 @@ namespace uber_ocr
                     if (strLine.Trim().Length > 0) lstLines.Add(strLine);
                 }
 
-                strOriginAddress = lstLines[0];
-                strDestinationAddress = lstLines[1];
+                strOriginAddress = lstLines[0].Replace("©","").Trim();
+                strDestinationAddress = lstLines[1].Replace("©", "").Trim();
 
                 //loop through each line
                 for (int intLine = 0; intLine< lstLines.Count; intLine++)
@@ -380,8 +380,11 @@ namespace uber_ocr
                         //duration and distance on the next line
                         string next_line = lstLines[intLine + 1];
                         string[] strParts = next_line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                        strDuration = string.Format("{0}{1}", strParts[0], strParts[1]);
-                        strDistance = string.Format("{0}", strParts[2]);
+                        if (strParts.Length == 6)
+                        {
+                            strDuration = string.Format("{0} {1} {2} {3}", strParts[0], strParts[1], strParts[2], strParts[3]);
+                            strDistance = string.Format("{0} {1}", strParts[4], strParts[5]);
+                        }
                     }
                     else if (strLine.Contains("Vehicle Type"))
                     {
@@ -391,7 +394,7 @@ namespace uber_ocr
                     else if (strLine.Contains("Time Requested"))
                     {
                         //Time Requested on this line
-                        strTimeRequested = strLine.Replace("Vehicle Type", "").Trim();
+                        strTimeRequested = strLine.Replace("Time Requested", "").Trim();
                     }
                     else if (strLine.Contains("Date Requested"))
                     {
@@ -401,7 +404,7 @@ namespace uber_ocr
                     else if (strLine.Contains("Points Earned"))
                     {
                         //Points Earned on this line
-                        strPointsEarned = strLine.Replace("Vehicle Type", "").Trim();
+                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("point", "").Trim();
                     }
                     else if (strLine.Contains("Fare"))
                     {
