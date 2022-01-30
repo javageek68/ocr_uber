@@ -57,17 +57,24 @@ namespace uber_ocr
 
             try
             {
-                string[] files = System.IO.Directory.GetFiles(strFolder, "*.jpg");
+                //write the header for the csvfile
+                File.WriteAllText(strOutFile, strHeader);
 
+                //get all files in the folder
+                string[] files = Directory.GetFiles(strFolder, "*.jpg");
+
+                //loop through each file
                 foreach (string strFile in files)
                 {
                     // get the ocr string from the file
                     if (this.read_ocr(strFile, ref strOcrText, ref strErrMsg))
                     {
                         string strCSV = string.Empty;
+                        //parse the ocr text
                         if (this.parse_ocr_text(strOcrText, strFile, ref strCSV, ref strErrMsg))
                         {
-
+                            //write the csv line to the file
+                            File.AppendAllText(strOutFile, strCSV);
                         }
                         else
                         {
@@ -167,13 +174,46 @@ namespace uber_ocr
             string strCoordinates20 = string.Empty;
             try
             {
-                
+                // use file info to parse the name of the file
+                FileInfo fileInfo = new FileInfo(strFile);
+                strImageFilename = fileInfo.Name;
+                //parse the lines in the ocr text
                 string[] strLines = strInput.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                //loop through each line
                 foreach(string strLine in strLines)
                 {
                     this.displayMsg(strLine);
-                    string strOutLine = string.Format("Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20", strImageFilename, strOriginAddress, strOriginCoordinates, strDestinationAddress, strDestinationCoordinates, strFare, strDuration, strDistance, strVehicleType, strTimeRequested, strDateRequested, strPointsEarned, strOriginCoordinates, strCoordinates2, strCoordinates3, strCoordinates4, strCoordinates5, strCoordinates6, strCoordinates7, strCoordinates8, strCoordinates9, strCoordinates10, strCoordinates11, strCoordinates12, strCoordinates13, strCoordinates14, strCoordinates15, strCoordinates16, strCoordinates17, strCoordinates18, strCoordinates19, strCoordinates20);
+                    if (strLine.Contains("Your Earnings"))
+                    {
+                        //earnings should be on the next line
+                    }
+                    else if (strLine.Contains("Duration Distance"))
+                    {
+                        //duration and distance on the next line
+                    }
+                    else if (strLine.Contains("Vehicle Type"))
+                    {
+                        //vehilce type on this line
+                    }
+                    else if (strLine.Contains("Time Requested"))
+                    {
+                        //Time Requested on this line
+                    }
+                    else if (strLine.Contains("Date Requested"))
+                    {
+                        //Date Requested on this line
+                    }
+                    else if (strLine.Contains("Points Earned"))
+                    {
+                        //Points Earned on this line
+                    }
+                    else if (strLine.Contains("Paid to you"))
+                    {
+                        //Paid to you on next line
+                    }
+
                 }
+                strCSV = string.Format("Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20", strImageFilename, strOriginAddress, strOriginCoordinates, strDestinationAddress, strDestinationCoordinates, strFare, strDuration, strDistance, strVehicleType, strTimeRequested, strDateRequested, strPointsEarned, strOriginCoordinates, strCoordinates2, strCoordinates3, strCoordinates4, strCoordinates5, strCoordinates6, strCoordinates7, strCoordinates8, strCoordinates9, strCoordinates10, strCoordinates11, strCoordinates12, strCoordinates13, strCoordinates14, strCoordinates15, strCoordinates16, strCoordinates17, strCoordinates18, strCoordinates19, strCoordinates20);
 
             }
             catch (Exception ex)
