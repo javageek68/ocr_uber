@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Data;
 using IronOcr;
 using System.Collections.Generic;
 
@@ -12,9 +13,82 @@ namespace uber_ocr
         string strOutFile = @"C:\Users\mike\OneDrive\Documents\School\CS_685_Foundations_of_Data_Science\Homework\Uber_Trip_Annotation\out_file.csv";
         string strHeader = "Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20";
 
+        DataTable dtData = new DataTable();
+
         public Form1()
         {
             InitializeComponent();
+            this.Load += Form1_Load;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.Init_data_table();
+        }
+
+        private void Init_data_table()
+        {
+            //had to define these again because the csv file lists Origin Coordinate twice
+            string strColHeaders = "Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20";
+            string[] strColumns = strColHeaders.Split(",".ToCharArray());
+            foreach(string strColumn in strColumns)
+            {
+                this.dtData.Columns.Add(strColumn);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            string strErrMsg = string.Empty;
+            this.fbdFolders.SelectedPath = strFolder;
+            if(this.fbdFolders.ShowDialog() == DialogResult.OK)
+            {
+                this.txtSourceFolder.Text = this.txtSourceFolder.Text = this.fbdFolders.SelectedPath;
+                if (this.get_files(this.fbdFolders.SelectedPath, ref strErrMsg) )
+                {
+
+                }
+                else
+                {
+                    // failed
+                    this.handleError(strErrMsg);
+                }
+            }
+        }
+
+        private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string strErrMsg = string.Empty;
+            string strOcrText = string.Empty;
+            ListItem selectedItem = (ListItem)this.lstFiles.SelectedItem;
+
+            this.pctData.Load(selectedItem.value);
+
+            // get the ocr string from the file
+            if (this.read_ocr(selectedItem.value, ref strOcrText, ref strErrMsg))
+            {
+                string strCSV = string.Empty;
+                //parse the ocr text
+                if (this.parse_ocr_text(strOcrText, selectedItem.name, ref strCSV, ref strErrMsg))
+                {
+
+                }
+                else
+                {
+                    // an error happened whie parsing the ocr text
+                    this.handleError(strErrMsg);
+                }
+            }
+            else
+            {
+                // an error happened while reading the ocr data
+                this.handleError(strErrMsg);
+            }
         }
 
         /// <summary>
@@ -42,6 +116,59 @@ namespace uber_ocr
                 this.handleError(ex.ToString());
             }
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DataRow row = this.dtData.NewRow();
+            row["Date Requested"] = this.txtDateRequested.Text;
+            row["Destination Address"] = this.txtDestAddress.Text;
+            row["Distance"] = this.txtDistance.Text;
+            row["Duration"] = this.txtDuration.Text;
+            row["Fare"] = this.txtFare.Text;
+            row["Image Filename"] = this.txtImageName.Text;
+            row["Origin Address"] = this.txtOrgAddress.Text;
+            row["Points Earned"] = this.txtPointsEarned.Text;
+            row["Time Requested"] = this.txtTimeRequested.Text;
+            row["Vehicle Type"] = this.txtVehicleType.Text;
+            this.dtData.Rows.Add(row);
+        }
+
+        private void btnWriteCSVFile_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strFolder"></param>
+        /// <param name="strErrMsg"></param>
+        /// <returns></returns>
+        private bool get_files(string strFolder, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+
+            try
+            {
+                this.lstFiles.Items.Clear();
+                //get all files in the folder
+                string[] files = Directory.GetFiles(strFolder, "*.jpg");
+
+                //loop through each file
+                foreach (string strFile in files)
+                {
+                    // use file info to parse the name of the file
+                    FileInfo fileInfo = new FileInfo(strFile);
+                    ListItem listItem = new ListItem(fileInfo.Name, strFile);
+                    this.lstFiles.Items.Add(listItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                blnRetVal = false;
+                strErrMsg = ex.ToString();
+            }
+            return blnRetVal;
         }
 
         /// <summary>
@@ -175,9 +302,8 @@ namespace uber_ocr
             string strCoordinates20 = string.Empty;
             try
             {
-                // use file info to parse the name of the file
-                FileInfo fileInfo = new FileInfo(strFile);
-                strImageFilename = fileInfo.Name;
+                strImageFilename = strFile;
+                
                 //parse the lines in the ocr text
                 string[] strLines = strInput.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                 List<string> lstLines = new List<string>();
@@ -186,8 +312,11 @@ namespace uber_ocr
                     if (strLine.Trim().Length > 0) lstLines.Add(strLine);
                 }
 
+                strOriginAddress = lstLines[0];
+                strDestinationAddress = lstLines[1];
+
                 //loop through each line
-                for(int intLine = 0; intLine< lstLines.Count; intLine++)
+                for (int intLine = 0; intLine< lstLines.Count; intLine++)
                 {
                     string strLine = lstLines[intLine];
                     this.displayMsg(strLine);
@@ -234,6 +363,17 @@ namespace uber_ocr
                 }
                 strCSV = string.Format("Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20", strImageFilename, strOriginAddress, strOriginCoordinates, strDestinationAddress, strDestinationCoordinates, strFare, strDuration, strDistance, strVehicleType, strTimeRequested, strDateRequested, strPointsEarned, strOriginCoordinates, strCoordinates2, strCoordinates3, strCoordinates4, strCoordinates5, strCoordinates6, strCoordinates7, strCoordinates8, strCoordinates9, strCoordinates10, strCoordinates11, strCoordinates12, strCoordinates13, strCoordinates14, strCoordinates15, strCoordinates16, strCoordinates17, strCoordinates18, strCoordinates19, strCoordinates20);
 
+                this.txtDateRequested.Text = strDateRequested;
+                this.txtDestAddress.Text = strDestinationAddress;
+                this.txtDistance.Text = strDistance;
+                this.txtDuration.Text = strDuration;
+                this.txtFare.Text = strFare;
+                this.txtImageName.Text = strImageFilename;
+                this.txtOrgAddress.Text = strOriginAddress;
+                this.txtPointsEarned.Text = strPointsEarned;
+                this.txtTimeRequested.Text = strTimeRequested;
+                this.txtVehicleType.Text = strVehicleType;
+   
             }
             catch (Exception ex)
             {
@@ -282,6 +422,7 @@ namespace uber_ocr
         {
             this.txtOutput.AppendText(string.Format("Error {0}\r\n", strMsg));
         }
-    
+
+ 
     }
 }
