@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using System.IO;
 using IronOcr;
+using System.Collections.Generic;
 
 namespace uber_ocr
 {
@@ -179,37 +180,55 @@ namespace uber_ocr
                 strImageFilename = fileInfo.Name;
                 //parse the lines in the ocr text
                 string[] strLines = strInput.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                //loop through each line
+                List<string> lstLines = new List<string>();
                 foreach(string strLine in strLines)
                 {
+                    if (strLine.Trim().Length > 0) lstLines.Add(strLine);
+                }
+
+                //loop through each line
+                for(int intLine = 0; intLine< lstLines.Count; intLine++)
+                {
+                    string strLine = lstLines[intLine];
                     this.displayMsg(strLine);
                     if (strLine.Contains("Your Earnings"))
                     {
                         //earnings should be on the next line
+                        string next_line = lstLines[intLine + 1];
+                        strFare = next_line;
                     }
                     else if (strLine.Contains("Duration Distance"))
                     {
                         //duration and distance on the next line
+                        string next_line = lstLines[intLine + 1];
+                        string[] strParts = next_line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                        strDuration = string.Format("{0}{1}", strParts[0], strParts[1]);
+                        strDistance = string.Format("{0}", strParts[2]);
                     }
                     else if (strLine.Contains("Vehicle Type"))
                     {
                         //vehilce type on this line
+                        strVehicleType = strLine.Replace("Vehicle Type", "").Trim();
                     }
                     else if (strLine.Contains("Time Requested"))
                     {
                         //Time Requested on this line
+                        strTimeRequested = strLine.Replace("Vehicle Type", "").Trim();
                     }
                     else if (strLine.Contains("Date Requested"))
                     {
                         //Date Requested on this line
+                        strDateRequested = strLine.Replace("Date Requested", "").Trim();
                     }
                     else if (strLine.Contains("Points Earned"))
                     {
                         //Points Earned on this line
+                        strPointsEarned = strLine.Replace("Vehicle Type", "").Trim();
                     }
-                    else if (strLine.Contains("Paid to you"))
+                    else if (strLine.Contains("Fare"))
                     {
-                        //Paid to you on next line
+                        //Paid to you on this line
+                        strFare = strLine.Replace("Fare", "").Trim();
                     }
 
                 }
