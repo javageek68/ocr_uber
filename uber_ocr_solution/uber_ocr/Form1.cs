@@ -180,7 +180,7 @@ namespace uber_ocr
 
                 foreach (DataRow row in this.dtData.Rows)
                 {
-                    IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
+                    IEnumerable<string> fields = row.ItemArray.Select(field =>  string.Format("\"{0}\"", field.ToString() ) );
                     sb.AppendLine(string.Join(",", fields));
                 }
 
@@ -382,8 +382,8 @@ namespace uber_ocr
                         string[] strParts = next_line.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
                         if (strParts.Length == 6)
                         {
-                            strDuration = string.Format("{0} {1} {2} {3}", strParts[0], strParts[1], strParts[2], strParts[3]);
-                            strDistance = string.Format("{0} {1}", strParts[4], strParts[5]);
+                            strDuration = string.Format("{0} {1} {2} {3}", strParts[0], strParts[1], strParts[2], strParts[3]).Replace("/n", "").Replace("/r", "");
+                            strDistance = string.Format("{0} {1}", strParts[4], strParts[5]).Replace("/n", "").Replace("/r", "");
                         }
                     }
                     else if (strLine.Contains("Vehicle Type"))
@@ -404,7 +404,7 @@ namespace uber_ocr
                     else if (strLine.Contains("Points Earned"))
                     {
                         //Points Earned on this line
-                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("point", "").Trim();
+                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("point", "").Replace("points", "").Trim();
                     }
                     else if (strLine.Contains("Fare"))
                     {
