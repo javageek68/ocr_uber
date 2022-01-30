@@ -4,6 +4,8 @@ using System.IO;
 using System.Data;
 using IronOcr;
 using System.Collections.Generic;
+using System.Text;
+using System.Linq;
 
 namespace uber_ocr
 {
@@ -33,7 +35,7 @@ namespace uber_ocr
             string[] strColumns = strColHeaders.Split(",".ToCharArray());
             foreach(string strColumn in strColumns)
             {
-                this.dtData.Columns.Add(strColumn);
+                this.dtData.Columns.Add(strColumn.Trim());
             }
         }
 
@@ -118,6 +120,11 @@ namespace uber_ocr
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DataRow row = this.dtData.NewRow();
@@ -132,11 +139,53 @@ namespace uber_ocr
             row["Time Requested"] = this.txtTimeRequested.Text;
             row["Vehicle Type"] = this.txtVehicleType.Text;
             this.dtData.Rows.Add(row);
+
+            this.grdData.DataSource = this.dtData;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection grdRows = this.grdData.SelectedRows;
+            foreach(DataGridViewRow row in grdRows)
+            {
+                string file = (string)row.Cells["Image Filename"].Value;
+                DataRow[] drr = this.dtData.Select("[Image Filename]='" + file + "' ");
+                for (int i = 0; i < drr.Length; i++)
+                    drr[i].Delete();
+                this.dtData.AcceptChanges();
+
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnWriteCSVFile_Click(object sender, EventArgs e)
         {
+            if (this.sfdFiles.ShowDialog() == DialogResult.OK)
+            {
+                string strFile = this.sfdFiles.FileName;
+                StringBuilder sb = new StringBuilder();
 
+                IEnumerable<string> columnNames = this.dtData.Columns.Cast<DataColumn>().
+                                                  Select(column => column.ColumnName);
+                sb.AppendLine(string.Join(",", columnNames));
+
+                foreach (DataRow row in this.dtData.Rows)
+                {
+                    IEnumerable<string> fields = row.ItemArray.Select(field => field.ToString());
+                    sb.AppendLine(string.Join(",", fields));
+                }
+
+                File.WriteAllText(strFile, sb.ToString());
+            }
         }
         /// <summary>
         /// 
@@ -423,6 +472,6 @@ namespace uber_ocr
             this.txtOutput.AppendText(string.Format("Error {0}\r\n", strMsg));
         }
 
- 
+  
     }
 }

@@ -29,6 +29,7 @@ namespace uber_ocr
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnStart = new System.Windows.Forms.Button();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.lstFiles = new System.Windows.Forms.ListBox();
@@ -60,9 +61,13 @@ namespace uber_ocr
             this.pctData = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnWriteCSVFile = new System.Windows.Forms.Button();
+            this.sfdFiles = new System.Windows.Forms.SaveFileDialog();
+            this.ctmnuDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.gbForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctData)).BeginInit();
+            this.ctmnuDataGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStart
@@ -122,6 +127,7 @@ namespace uber_ocr
             this.grdData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdData.ContextMenuStrip = this.ctmnuDataGrid;
             this.grdData.Location = new System.Drawing.Point(838, 574);
             this.grdData.Name = "grdData";
             this.grdData.Size = new System.Drawing.Size(438, 425);
@@ -370,6 +376,20 @@ namespace uber_ocr
             this.btnWriteCSVFile.UseVisualStyleBackColor = true;
             this.btnWriteCSVFile.Click += new System.EventHandler(this.btnWriteCSVFile_Click);
             // 
+            // ctmnuDataGrid
+            // 
+            this.ctmnuDataGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteToolStripMenuItem});
+            this.ctmnuDataGrid.Name = "ctmnuDataGrid";
+            this.ctmnuDataGrid.Size = new System.Drawing.Size(108, 26);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,6 +409,7 @@ namespace uber_ocr
             this.gbForm.ResumeLayout(false);
             this.gbForm.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctData)).EndInit();
+            this.ctmnuDataGrid.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -427,6 +448,9 @@ namespace uber_ocr
         private System.Windows.Forms.PictureBox pctData;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnWriteCSVFile;
+        private System.Windows.Forms.SaveFileDialog sfdFiles;
+        private System.Windows.Forms.ContextMenuStrip ctmnuDataGrid;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
 
