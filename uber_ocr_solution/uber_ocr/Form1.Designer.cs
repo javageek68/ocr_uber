@@ -446,6 +446,7 @@ namespace uber_ocr
             // 
             // btnBrowseGeoSite
             // 
+            this.btnBrowseGeoSite.Enabled = false;
             this.btnBrowseGeoSite.Location = new System.Drawing.Point(8, 20);
             this.btnBrowseGeoSite.Name = "btnBrowseGeoSite";
             this.btnBrowseGeoSite.Size = new System.Drawing.Size(159, 26);
@@ -456,6 +457,7 @@ namespace uber_ocr
             // 
             // btnTakeSnapshot
             // 
+            this.btnTakeSnapshot.Enabled = false;
             this.btnTakeSnapshot.Location = new System.Drawing.Point(374, 20);
             this.btnTakeSnapshot.Name = "btnTakeSnapshot";
             this.btnTakeSnapshot.Size = new System.Drawing.Size(102, 26);
@@ -466,6 +468,7 @@ namespace uber_ocr
             // 
             // btnScrapeCords
             // 
+            this.btnScrapeCords.Enabled = false;
             this.btnScrapeCords.Location = new System.Drawing.Point(195, 20);
             this.btnScrapeCords.Name = "btnScrapeCords";
             this.btnScrapeCords.Size = new System.Drawing.Size(159, 26);
