@@ -66,16 +66,17 @@ namespace uber_ocr
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnBrowseGeoSite = new System.Windows.Forms.Button();
+            this.btnTakeSnapshot = new System.Windows.Forms.Button();
+            this.btnScrapeCords = new System.Windows.Forms.Button();
+            this.grdCoords = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.wbBrowser = new System.Windows.Forms.WebBrowser();
             this.txtDestFolder = new System.Windows.Forms.TextBox();
             this.btnBrowseDst = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.wbBrowser = new System.Windows.Forms.WebBrowser();
-            this.grdCoords = new System.Windows.Forms.DataGridView();
-            this.btnScrapeCords = new System.Windows.Forms.Button();
-            this.btnTakeSnapshot = new System.Windows.Forms.Button();
-            this.btnBrowseGeoSite = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.ctmnuDataGrid.SuspendLayout();
             this.gbForm.SuspendLayout();
@@ -83,8 +84,8 @@ namespace uber_ocr
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -429,6 +430,7 @@ namespace uber_ocr
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.btnBrowseGeoSite);
             this.tabPage2.Controls.Add(this.btnTakeSnapshot);
             this.tabPage2.Controls.Add(this.btnScrapeCords);
@@ -441,6 +443,70 @@ namespace uber_ocr
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Georeferencer";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnBrowseGeoSite
+            // 
+            this.btnBrowseGeoSite.Location = new System.Drawing.Point(8, 20);
+            this.btnBrowseGeoSite.Name = "btnBrowseGeoSite";
+            this.btnBrowseGeoSite.Size = new System.Drawing.Size(159, 26);
+            this.btnBrowseGeoSite.TabIndex = 10;
+            this.btnBrowseGeoSite.Text = "Browse To Georeferencer";
+            this.btnBrowseGeoSite.UseVisualStyleBackColor = true;
+            this.btnBrowseGeoSite.Click += new System.EventHandler(this.btnBrowseGeoSite_Click);
+            // 
+            // btnTakeSnapshot
+            // 
+            this.btnTakeSnapshot.Location = new System.Drawing.Point(374, 20);
+            this.btnTakeSnapshot.Name = "btnTakeSnapshot";
+            this.btnTakeSnapshot.Size = new System.Drawing.Size(102, 26);
+            this.btnTakeSnapshot.TabIndex = 9;
+            this.btnTakeSnapshot.Text = "Take Snapshot";
+            this.btnTakeSnapshot.UseVisualStyleBackColor = true;
+            this.btnTakeSnapshot.Click += new System.EventHandler(this.btnTakeSnapshot_Click);
+            // 
+            // btnScrapeCords
+            // 
+            this.btnScrapeCords.Location = new System.Drawing.Point(195, 20);
+            this.btnScrapeCords.Name = "btnScrapeCords";
+            this.btnScrapeCords.Size = new System.Drawing.Size(159, 26);
+            this.btnScrapeCords.TabIndex = 8;
+            this.btnScrapeCords.Text = "Scrape Coordinates";
+            this.btnScrapeCords.UseVisualStyleBackColor = true;
+            this.btnScrapeCords.Click += new System.EventHandler(this.btnScrapeCords_Click);
+            // 
+            // grdCoords
+            // 
+            this.grdCoords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdCoords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdCoords.ContextMenuStrip = this.ctmnuDataGrid;
+            this.grdCoords.Location = new System.Drawing.Point(1120, 100);
+            this.grdCoords.Name = "grdCoords";
+            this.grdCoords.Size = new System.Drawing.Size(273, 775);
+            this.grdCoords.TabIndex = 7;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.wbBrowser);
+            this.groupBox1.Location = new System.Drawing.Point(12, 52);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1088, 833);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Browser";
+            // 
+            // wbBrowser
+            // 
+            this.wbBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbBrowser.Location = new System.Drawing.Point(3, 16);
+            this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.wbBrowser.Name = "wbBrowser";
+            this.wbBrowser.Size = new System.Drawing.Size(1082, 814);
+            this.wbBrowser.TabIndex = 0;
             // 
             // txtDestFolder
             // 
@@ -480,69 +546,16 @@ namespace uber_ocr
             this.label12.TabIndex = 13;
             this.label12.Text = "Destination Images";
             // 
-            // groupBox1
+            // label13
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.wbBrowser);
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1088, 833);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Browser";
-            // 
-            // wbBrowser
-            // 
-            this.wbBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbBrowser.Location = new System.Drawing.Point(3, 16);
-            this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.Size = new System.Drawing.Size(1082, 814);
-            this.wbBrowser.TabIndex = 0;
-            // 
-            // grdCoords
-            // 
-            this.grdCoords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.grdCoords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCoords.ContextMenuStrip = this.ctmnuDataGrid;
-            this.grdCoords.Location = new System.Drawing.Point(1120, 100);
-            this.grdCoords.Name = "grdCoords";
-            this.grdCoords.Size = new System.Drawing.Size(273, 775);
-            this.grdCoords.TabIndex = 7;
-            // 
-            // btnScrapeCords
-            // 
-            this.btnScrapeCords.Location = new System.Drawing.Point(195, 20);
-            this.btnScrapeCords.Name = "btnScrapeCords";
-            this.btnScrapeCords.Size = new System.Drawing.Size(159, 26);
-            this.btnScrapeCords.TabIndex = 8;
-            this.btnScrapeCords.Text = "Scrape Coordinates";
-            this.btnScrapeCords.UseVisualStyleBackColor = true;
-            this.btnScrapeCords.Click += new System.EventHandler(this.btnScrapeCords_Click);
-            // 
-            // btnTakeSnapshot
-            // 
-            this.btnTakeSnapshot.Location = new System.Drawing.Point(374, 20);
-            this.btnTakeSnapshot.Name = "btnTakeSnapshot";
-            this.btnTakeSnapshot.Size = new System.Drawing.Size(102, 26);
-            this.btnTakeSnapshot.TabIndex = 9;
-            this.btnTakeSnapshot.Text = "Take Snapshot";
-            this.btnTakeSnapshot.UseVisualStyleBackColor = true;
-            this.btnTakeSnapshot.Click += new System.EventHandler(this.btnTakeSnapshot_Click);
-            // 
-            // btnBrowseGeoSite
-            // 
-            this.btnBrowseGeoSite.Location = new System.Drawing.Point(8, 20);
-            this.btnBrowseGeoSite.Name = "btnBrowseGeoSite";
-            this.btnBrowseGeoSite.Size = new System.Drawing.Size(159, 26);
-            this.btnBrowseGeoSite.TabIndex = 10;
-            this.btnBrowseGeoSite.Text = "Browse To Georeferencer";
-            this.btnBrowseGeoSite.UseVisualStyleBackColor = true;
-            this.btnBrowseGeoSite.Click += new System.EventHandler(this.btnBrowseGeoSite_Click);
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(525, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(337, 31);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "This tab isn\'t working yet";
             // 
             // Form1
             // 
@@ -568,8 +581,9 @@ namespace uber_ocr
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,6 +636,7 @@ namespace uber_ocr
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.WebBrowser wbBrowser;
         private System.Windows.Forms.Button btnBrowseGeoSite;
+        private System.Windows.Forms.Label label13;
     }
 }
 

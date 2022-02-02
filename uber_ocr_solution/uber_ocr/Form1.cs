@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-using IronOcr;
+//using IronOcr;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Tesseract;
 
 namespace uber_ocr
 {
@@ -370,22 +371,48 @@ namespace uber_ocr
         /// <param name="strText"></param>
         /// <param name="strErrMsg"></param>
         /// <returns></returns>
+        private bool read_ocr_old(string strImg, ref string strText, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                //var Ocr = new IronTesseract();
+                //using (var Input = new OcrInput(strImg))
+                //{
+                //    // Input.Deskew();  // use if image not straight
+                //    // Input.DeNoise(); // use if image contains digital noise
+                //    var Result = Ocr.Read(Input);
+                //    this.txtOutput.Text = Result.Text;
+                //    Console.WriteLine(Result.Text);
+                //    strText = Result.Text;
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                blnRetVal = false;
+                strErrMsg = ex.ToString();
+            }
+            return blnRetVal;
+        }
+
         private bool read_ocr(string strImg, ref string strText, ref string strErrMsg)
         {
             bool blnRetVal = true;
             try
             {
-                var Ocr = new IronTesseract();
-                using (var Input = new OcrInput(strImg))
+                using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default))
                 {
-                    // Input.Deskew();  // use if image not straight
-                    // Input.DeNoise(); // use if image contains digital noise
-                    var Result = Ocr.Read(Input);
-                    this.txtOutput.Text = Result.Text;
-                    Console.WriteLine(Result.Text);
-                    strText = Result.Text;
+                    using (var img = Pix.LoadFromFile(strImg))
+                    {
+                        using (var page = engine.Process(img))
+                        {
+                            strText = page.GetText();
+                            //this.txtStatus.AppendText(string.Format("Mean confidence: {0}", page.GetMeanConfidence()));
+                            //this.txtStatus.AppendText(string.Format("Text (GetText): \r\n{0}", text));
+                        }
+                    }
                 }
-
             }
             catch (Exception ex)
             {
