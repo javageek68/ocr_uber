@@ -2,10 +2,11 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-using IronOcr;
+//using IronOcr;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Tesseract;
 
 namespace uber_ocr
 {
@@ -71,6 +72,7 @@ namespace uber_ocr
 
             this.pctData.Load(selectedItem.value);
 
+            this.clearMsg();
             // get the ocr string from the file
             if (this.read_ocr(selectedItem.value, ref strOcrText, ref strErrMsg))
             {
@@ -274,6 +276,7 @@ namespace uber_ocr
             return blnRetVal;
         }
 
+
         /// <summary>
         /// Read text with ocr and return the text
         /// </summary>
@@ -281,21 +284,21 @@ namespace uber_ocr
         /// <param name="strText"></param>
         /// <param name="strErrMsg"></param>
         /// <returns></returns>
-        private bool read_ocr(string strImg, ref string strText, ref string strErrMsg)
+        private bool read_ocr_old(string strImg, ref string strText, ref string strErrMsg)
         {
             bool blnRetVal = true;
             try
             {
-                var Ocr = new IronTesseract();
-                using (var Input = new OcrInput(strImg))
-                {
-                    // Input.Deskew();  // use if image not straight
-                    // Input.DeNoise(); // use if image contains digital noise
-                    var Result = Ocr.Read(Input);
-                    this.txtOutput.Text = Result.Text;
-                    Console.WriteLine(Result.Text);
-                    strText = Result.Text;
-                }
+                //var Ocr = new IronTesseract();
+                //using (var Input = new OcrInput(strImg))
+                //{
+                //    // Input.Deskew();  // use if image not straight
+                //    // Input.DeNoise(); // use if image contains digital noise
+                //    var Result = Ocr.Read(Input);
+                //    this.txtOutput.Text = Result.Text;
+                //    Console.WriteLine(Result.Text);
+                //    strText = Result.Text;
+                //}
 
             }
             catch (Exception ex)
@@ -305,6 +308,33 @@ namespace uber_ocr
             }
             return blnRetVal;
         }
+
+        private bool read_ocr(string strImg, ref string strText, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                using (var engine = new TesseractEngine(@"./tessdata", "eng", EngineMode.Default))
+                {
+                    using (var img = Pix.LoadFromFile(strImg))
+                    {
+                        using (var page = engine.Process(img))
+                        {
+                            strText = page.GetText();
+                            //this.txtStatus.AppendText(string.Format("Mean confidence: {0}", page.GetMeanConfidence()));
+                            //this.txtStatus.AppendText(string.Format("Text (GetText): \r\n{0}", text));
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                blnRetVal = false;
+                strErrMsg = ex.ToString();
+            }
+            return blnRetVal;
+        }
+
 
         /// <summary>
         /// parse the text from the ocr string and return a csv line
@@ -435,26 +465,10 @@ namespace uber_ocr
             return blnRetVal;
         }
 
-        /// <summary>
-        /// write a csv line to the out file
-        /// </summary>
-        /// <param name="strOutFile"></param>
-        /// <param name="strCSV"></param>
-        /// <param name="strErrMsg"></param>
-        /// <returns></returns>
-        private bool write_to_file(string strOutFile, string strCSV, ref string strErrMsg)
+
+        private void clearMsg()
         {
-            bool blnRetVal = true;
-            try
-            {
-                System.IO.File.WriteAllText(strOutFile, strCSV);
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
+            this.txtOutput.Text = string.Empty;
         }
 
         /// <summary>
