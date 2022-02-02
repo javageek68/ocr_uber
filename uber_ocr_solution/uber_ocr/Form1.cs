@@ -63,6 +63,95 @@ namespace uber_ocr
             }
         }
 
+        private void btnBrowseDst_Click(object sender, EventArgs e)
+        {
+            string strErrMsg = string.Empty;
+            this.fbdFolders.SelectedPath = strFolder;
+            if (this.fbdFolders.ShowDialog() == DialogResult.OK)
+            {
+                this.txtDestFolder.Text = this.txtSourceFolder.Text = this.fbdFolders.SelectedPath;
+            }
+        }
+
+        private void btnBrowseGeoSite_Click(object sender, EventArgs e)
+        {
+            this.wbBrowser.Navigate("www.georeferencer.com");
+        }
+
+        private void btnScrapeCords_Click(object sender, EventArgs e)
+        {
+         
+    
+        }
+
+        private bool scrape_page(string strXPath, ref List<string> lstResults, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                HtmlWindow window = this.wbBrowser.Document.Window;
+                string str = window.Document.Body.OuterHtml;
+
+                HtmlAgilityPack.HtmlDocument HtmlDoc = new HtmlAgilityPack.HtmlDocument();
+                HtmlDoc.LoadHtml(str);
+
+                HtmlAgilityPack.HtmlNodeCollection Nodes = HtmlDoc.DocumentNode.SelectNodes(strXPath);
+                lstResults = new List<string>();
+                foreach (HtmlAgilityPack.HtmlNode Node in Nodes)
+                {
+                    lstResults.Add (Node.OuterHtml);
+                }
+            }
+            catch (Exception ex)
+            {
+                strErrMsg = ex.ToString();
+                blnRetVal = false;
+            }
+            return blnRetVal;
+        }
+
+        private bool populate_coords_grid(List<string> lstResults, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                foreach(string strLine in lstResults)
+                {
+                    // parse coords form html
+                    // add to table
+                }
+            }
+            catch (Exception ex)
+            {
+                strErrMsg = ex.ToString();
+                blnRetVal = false;
+            }
+            return blnRetVal;
+        }
+
+        private void btnTakeSnapshot_Click(object sender, EventArgs e)
+        {
+            //using (var browser = new System.Windows.Forms.WebBrowser())
+            //{
+            //    browser.DocumentCompleted += delegate
+            //    {
+            //        using (var pic = new Bitmap(browser.Width, browser.Height))
+            //        {
+            //            browser.DrawToBitmap(pic, new Rectangle(0, 0, pic.Width, pic.Height));
+            //            pic.Save(imagePath);
+            //        }
+            //    };
+
+            //    browser.Navigate(Server.MapPath("~") + htmlPath); //a file or a url
+            //    browser.ScrollBarsEnabled = false;
+
+            //    while (browser.ReadyState != System.Windows.Forms.WebBrowserReadyState.Complete)
+            //    {
+            //        System.Windows.Forms.Application.DoEvents();
+            //    }
+            //}
+        }
+
         private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)
         {
             string strErrMsg = string.Empty;
@@ -475,6 +564,6 @@ namespace uber_ocr
             this.txtOutput.AppendText(string.Format("Error {0}\r\n", strMsg));
         }
 
-  
+
     }
 }
