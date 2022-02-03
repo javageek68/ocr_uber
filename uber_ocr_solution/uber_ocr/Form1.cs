@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Tesseract;
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace uber_ocr
 {
@@ -81,7 +83,7 @@ namespace uber_ocr
             this.fbdFolders.SelectedPath = strFolder;
             if(this.fbdFolders.ShowDialog() == DialogResult.OK)
             {
-                this.txtSourceFolder.Text = this.txtSourceFolder.Text = this.fbdFolders.SelectedPath;
+                this.txtSourceFolder.Text = this.fbdFolders.SelectedPath;
                 if (this.get_files(this.fbdFolders.SelectedPath, ref strErrMsg) )
                 {
 
@@ -100,7 +102,7 @@ namespace uber_ocr
             this.fbdFolders.SelectedPath = strFolder;
             if (this.fbdFolders.ShowDialog() == DialogResult.OK)
             {
-                this.txtDestFolder.Text = this.txtSourceFolder.Text = this.fbdFolders.SelectedPath;
+                this.txtDestFolder.Text = this.fbdFolders.SelectedPath;
             }
         }
 
@@ -121,8 +123,7 @@ namespace uber_ocr
         {
             string sHtml = await wbBrowser.CoreWebView2.ExecuteScriptAsync("document.documentElement.outerHTML");
             string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
-            this.txtDestFolder.Text = sHtmlDecoded;
-
+   
             //for now, we will use test data
             string strContents = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape.txt");
 
@@ -268,6 +269,29 @@ namespace uber_ocr
         }
 
         private void btnTakeSnapshot_Click(object sender, EventArgs e)
+        {
+            string strImage = this.txtImageName.Text;
+            string strImagePath = string.Format(@"{0}\\{1}", this.txtDestFolder.Text, strImage);
+            try
+            {
+                this.TakeCroppedScreenShot(strImagePath, this.wbBrowser.Location.X, this.wbBrowser.Location.Y, this.wbBrowser.Width, this.wbBrowser.Height, System.Drawing.Imaging.ImageFormat.Jpeg);
+            }
+            catch (Exception ex)
+            {
+                this.handleError(ex.ToString());
+            }
+        }
+
+        public void TakeCroppedScreenShot(string fileName, int x, int y, int width, int height, System.Drawing.Imaging.ImageFormat format)
+        {
+            Rectangle r = new Rectangle(x, y, width, height);
+            Bitmap bmp = new Bitmap(r.Width, r.Height, PixelFormat.Format32bppArgb);
+            Graphics g = Graphics.FromImage(bmp);
+            g.CopyFromScreen(r.Left, r.Top, 0, 0, bmp.Size, CopyPixelOperation.SourceCopy);
+            bmp.Save(fileName, format);
+        }
+
+        private void TakeScreenshot2()
         {
             //using (var browser = new System.Windows.Forms.WebBrowser())
             //{
