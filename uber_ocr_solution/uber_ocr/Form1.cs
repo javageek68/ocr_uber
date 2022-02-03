@@ -144,7 +144,15 @@ namespace uber_ocr
 
         private void btnScrapeCords_Click(object sender, EventArgs e)
         {
-            this.get_dom_from_WebView2();
+            try
+            {
+                this.get_dom_from_WebView2();
+            }
+            catch (Exception ex)
+            {
+                this.handleError(ex.ToString());
+                throw;
+            }
         }
 
         async void get_dom_from_WebView2()
@@ -158,18 +166,27 @@ namespace uber_ocr
             // clear the table
             this.Init_coords_table();
 
-            List<List<string>> lstTable = this.parse_data_table(sHtmlDecoded);
-
-            foreach (List<string> lstRow in lstTable)
+            try
             {
-                DataRow row = this.dtCoordsData.NewRow();
-                row["id"] = lstRow[0];
-                row["x"] = lstRow[1];
-                row["y"] = lstRow[2];
-                this.dtCoordsData.Rows.Add(row);
+                List<List<string>> lstTable = this.parse_data_table(sHtmlDecoded);
 
-                this.grdCoords.DataSource = this.dtCoordsData;
+                foreach (List<string> lstRow in lstTable)
+                {
+                    DataRow row = this.dtCoordsData.NewRow();
+                    row["id"] = lstRow[0];
+                    row["x"] = lstRow[1];
+                    row["y"] = lstRow[2];
+                    this.dtCoordsData.Rows.Add(row);
+
+                    this.grdCoords.DataSource = this.dtCoordsData;
+                }
             }
+            catch (Exception ex)
+            {
+                this.handleError(ex.ToString());
+            }
+
+      
         }
 
         /// <summary>
