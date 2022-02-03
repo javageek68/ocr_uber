@@ -63,7 +63,7 @@ namespace uber_ocr
             {
                 this.dtCSVData.Columns.Add(strColumn.Trim());
             }
-
+            this.dtCSVData.TableName = "uber_data";
    
         }
 
@@ -73,6 +73,31 @@ namespace uber_ocr
             this.dtCoordsData.Columns.Add("id");
             this.dtCoordsData.Columns.Add("x");
             this.dtCoordsData.Columns.Add("y");
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           if (this.ofdFiles.ShowDialog() == DialogResult.OK )
+            {
+                string strFile = this.ofdFiles.FileName;
+                this.dtCSVData.ReadXml(strFile);
+                this.grdData.DataSource = this.dtCSVData;
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.sfdFiles.ShowDialog() == DialogResult.OK)
+            {
+                string strFile = this.sfdFiles.FileName;
+                this.dtCSVData.WriteXml(strFile);
+            }
+            
+        }
+
+        private void exportCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.btnWriteCSVFile_Click(null, null);
         }
 
         /// <summary>
@@ -125,10 +150,10 @@ namespace uber_ocr
         async void get_dom_from_WebView2()
         {
             string sHtml = await wbBrowser.CoreWebView2.ExecuteScriptAsync("document.documentElement.outerHTML");
-            //string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
+            string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
    
             //for now, we will use test data
-            string sHtmlDecoded = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape-class.txt");
+            //string sHtmlDecoded = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape-class.txt");
 
             // clear the table
             this.Init_coords_table();
@@ -232,33 +257,6 @@ namespace uber_ocr
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            string strErrMsg = string.Empty;
-            try
-            {
-                if (process_files(strFolder, strOutFile, ref strErrMsg))
-                {
-                    //done
-                    this.displayMsg("Done!");
-                }
-                else
-                {
-                    this.handleError(strErrMsg);
-                }
-            }
-            catch (Exception ex)
-            {
-                this.handleError(ex.ToString());
-            }
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DataRow row = this.dtCSVData.NewRow();
@@ -330,8 +328,7 @@ namespace uber_ocr
                 string strFile = this.sfdFiles.FileName;
                 StringBuilder sb = new StringBuilder();
 
-                IEnumerable<string> columnNames = this.dtCSVData.Columns.Cast<DataColumn>().
-                                                  Select(column => column.ColumnName);
+                IEnumerable<string> columnNames = this.dtCSVData.Columns.Cast<DataColumn>().Select(column => column.ColumnName);
                 sb.AppendLine(string.Join(",", columnNames));
 
                 foreach (DataRow row in this.dtCSVData.Rows)
@@ -376,91 +373,6 @@ namespace uber_ocr
             return blnRetVal;
         }
 
-        /// <summary>
-        /// Loop through all files and process each one
-        /// </summary>
-        /// <param name="strFolder"></param>
-        /// <param name="strOutFile"></param>
-        /// <param name="strErrMsg"></param>
-        /// <returns></returns>
-        private bool process_files(string strFolder, string strOutFile, ref string strErrMsg)
-        {
-            bool blnRetVal = true;
-            string strOcrText = string.Empty;
-
-            try
-            {
-                //write the header for the csvfile
-                File.WriteAllText(strOutFile, strHeader);
-
-                //get all files in the folder
-                string[] files = Directory.GetFiles(strFolder, "*.jpg");
-
-                //loop through each file
-                foreach (string strFile in files)
-                {
-                    // get the ocr string from the file
-                    if (this.read_ocr(strFile, ref strOcrText, ref strErrMsg))
-                    {
-                        string strCSV = string.Empty;
-                        //parse the ocr text
-                        if (this.parse_ocr_text(strOcrText, strFile, ref strCSV, ref strErrMsg))
-                        {
-                            //write the csv line to the file
-                            File.AppendAllText(strOutFile, strCSV);
-                        }
-                        else
-                        {
-                            // an error happened whie parsing the ocr text
-                            this.handleError(strErrMsg);
-                        }
-                    }
-                    else
-                    {
-                        // an error happened while reading the ocr data
-                        this.handleError(strErrMsg);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
-        }
-
-        /// <summary>
-        /// Read text with ocr and return the text
-        /// </summary>
-        /// <param name="strImg"></param>
-        /// <param name="strText"></param>
-        /// <param name="strErrMsg"></param>
-        /// <returns></returns>
-        private bool read_ocr_old(string strImg, ref string strText, ref string strErrMsg)
-        {
-            bool blnRetVal = true;
-            try
-            {
-                //var Ocr = new IronTesseract();
-                //using (var Input = new OcrInput(strImg))
-                //{
-                //    // Input.Deskew();  // use if image not straight
-                //    // Input.DeNoise(); // use if image contains digital noise
-                //    var Result = Ocr.Read(Input);
-                //    this.txtOutput.Text = Result.Text;
-                //    Console.WriteLine(Result.Text);
-                //    strText = Result.Text;
-                //}
-
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
-        }
 
         private bool read_ocr(string strImg, ref string strText, ref string strErrMsg)
         {
@@ -620,11 +532,7 @@ namespace uber_ocr
             return blnRetVal;
         }
 
-        private void grdCoords_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+ 
         private void GrdCoords_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedRowCollection grdRows = this.grdCoords.SelectedRows;
@@ -689,5 +597,7 @@ namespace uber_ocr
         {
 
         }
+
+
     }
 }

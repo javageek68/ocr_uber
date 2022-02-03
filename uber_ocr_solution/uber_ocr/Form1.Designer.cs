@@ -121,6 +121,12 @@ namespace uber_ocr
             this.btnBrowseDst = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.mnuFile = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ofdFiles = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.ctmnuDataGrid.SuspendLayout();
             this.gbForm.SuspendLayout();
@@ -131,6 +137,7 @@ namespace uber_ocr
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).BeginInit();
             this.gbBrowser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wbBrowser)).BeginInit();
+            this.mnuFile.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -159,7 +166,7 @@ namespace uber_ocr
             // 
             this.txtSourceFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSourceFolder.Location = new System.Drawing.Point(117, 12);
+            this.txtSourceFolder.Location = new System.Drawing.Point(119, 31);
             this.txtSourceFolder.Name = "txtSourceFolder";
             this.txtSourceFolder.Size = new System.Drawing.Size(1695, 20);
             this.txtSourceFolder.TabIndex = 0;
@@ -167,7 +174,7 @@ namespace uber_ocr
             // btnBrowseSrc
             // 
             this.btnBrowseSrc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowseSrc.Location = new System.Drawing.Point(1820, 13);
+            this.btnBrowseSrc.Location = new System.Drawing.Point(1822, 32);
             this.btnBrowseSrc.Name = "btnBrowseSrc";
             this.btnBrowseSrc.Size = new System.Drawing.Size(31, 19);
             this.btnBrowseSrc.TabIndex = 1;
@@ -1034,7 +1041,7 @@ namespace uber_ocr
             // 
             this.txtDestFolder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDestFolder.Location = new System.Drawing.Point(119, 38);
+            this.txtDestFolder.Location = new System.Drawing.Point(119, 53);
             this.txtDestFolder.Name = "txtDestFolder";
             this.txtDestFolder.Size = new System.Drawing.Size(1695, 20);
             this.txtDestFolder.TabIndex = 2;
@@ -1042,7 +1049,7 @@ namespace uber_ocr
             // btnBrowseDst
             // 
             this.btnBrowseDst.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBrowseDst.Location = new System.Drawing.Point(1820, 39);
+            this.btnBrowseDst.Location = new System.Drawing.Point(1820, 54);
             this.btnBrowseDst.Name = "btnBrowseDst";
             this.btnBrowseDst.Size = new System.Drawing.Size(31, 19);
             this.btnBrowseDst.TabIndex = 3;
@@ -1053,7 +1060,7 @@ namespace uber_ocr
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 18);
+            this.label11.Location = new System.Drawing.Point(17, 37);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 13);
             this.label11.TabIndex = 12;
@@ -1062,17 +1069,63 @@ namespace uber_ocr
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 44);
+            this.label12.Location = new System.Drawing.Point(16, 59);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 13;
             this.label12.Text = "Destination Images";
+            // 
+            // mnuFile
+            // 
+            this.mnuFile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.mnuFile.Location = new System.Drawing.Point(0, 0);
+            this.mnuFile.Name = "mnuFile";
+            this.mnuFile.Size = new System.Drawing.Size(1866, 24);
+            this.mnuFile.TabIndex = 14;
+            this.mnuFile.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem,
+            this.saveToolStripMenuItem,
+            this.exportCSVToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // exportCSVToolStripMenuItem
+            // 
+            this.exportCSVToolStripMenuItem.Name = "exportCSVToolStripMenuItem";
+            this.exportCSVToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportCSVToolStripMenuItem.Text = "Export CSV";
+            this.exportCSVToolStripMenuItem.Click += new System.EventHandler(this.exportCSVToolStripMenuItem_Click);
+            // 
+            // ofdFiles
+            // 
+            this.ofdFiles.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1866, 1025);
+            this.Controls.Add(this.mnuFile);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnBrowseDst);
@@ -1096,6 +1149,8 @@ namespace uber_ocr
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).EndInit();
             this.gbBrowser.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.wbBrowser)).EndInit();
+            this.mnuFile.ResumeLayout(false);
+            this.mnuFile.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1193,6 +1248,12 @@ namespace uber_ocr
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cmbTargetField;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.MenuStrip mnuFile;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportCSVToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog ofdFiles;
     }
 }
 
