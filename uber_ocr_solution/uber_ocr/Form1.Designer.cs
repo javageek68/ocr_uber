@@ -162,7 +162,7 @@ namespace uber_ocr
             this.txtSourceFolder.Location = new System.Drawing.Point(117, 12);
             this.txtSourceFolder.Name = "txtSourceFolder";
             this.txtSourceFolder.Size = new System.Drawing.Size(1695, 20);
-            this.txtSourceFolder.TabIndex = 4;
+            this.txtSourceFolder.TabIndex = 0;
             // 
             // btnBrowseSrc
             // 
@@ -170,7 +170,7 @@ namespace uber_ocr
             this.btnBrowseSrc.Location = new System.Drawing.Point(1820, 13);
             this.btnBrowseSrc.Name = "btnBrowseSrc";
             this.btnBrowseSrc.Size = new System.Drawing.Size(31, 19);
-            this.btnBrowseSrc.TabIndex = 5;
+            this.btnBrowseSrc.TabIndex = 1;
             this.btnBrowseSrc.Text = "...";
             this.btnBrowseSrc.UseVisualStyleBackColor = true;
             this.btnBrowseSrc.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -185,7 +185,7 @@ namespace uber_ocr
             this.grdData.Location = new System.Drawing.Point(7, 684);
             this.grdData.Name = "grdData";
             this.grdData.Size = new System.Drawing.Size(390, 203);
-            this.grdData.TabIndex = 6;
+            this.grdData.TabIndex = 33;
             this.grdData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellContentClick);
             // 
             // ctmnuDataGrid
@@ -285,7 +285,7 @@ namespace uber_ocr
             this.txtCoords20.Location = new System.Drawing.Point(122, 623);
             this.txtCoords20.Name = "txtCoords20";
             this.txtCoords20.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords20.TabIndex = 63;
+            this.txtCoords20.TabIndex = 30;
             // 
             // label34
             // 
@@ -303,7 +303,7 @@ namespace uber_ocr
             this.txtCoords19.Location = new System.Drawing.Point(122, 603);
             this.txtCoords19.Name = "txtCoords19";
             this.txtCoords19.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords19.TabIndex = 61;
+            this.txtCoords19.TabIndex = 29;
             // 
             // label25
             // 
@@ -321,7 +321,7 @@ namespace uber_ocr
             this.txtCoords18.Location = new System.Drawing.Point(122, 583);
             this.txtCoords18.Name = "txtCoords18";
             this.txtCoords18.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords18.TabIndex = 59;
+            this.txtCoords18.TabIndex = 28;
             // 
             // label26
             // 
@@ -339,7 +339,7 @@ namespace uber_ocr
             this.txtCoords17.Location = new System.Drawing.Point(122, 563);
             this.txtCoords17.Name = "txtCoords17";
             this.txtCoords17.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords17.TabIndex = 57;
+            this.txtCoords17.TabIndex = 27;
             // 
             // label27
             // 
@@ -357,7 +357,7 @@ namespace uber_ocr
             this.txtCoords16.Location = new System.Drawing.Point(122, 543);
             this.txtCoords16.Name = "txtCoords16";
             this.txtCoords16.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords16.TabIndex = 55;
+            this.txtCoords16.TabIndex = 26;
             // 
             // label28
             // 
@@ -375,7 +375,7 @@ namespace uber_ocr
             this.txtCoords15.Location = new System.Drawing.Point(122, 523);
             this.txtCoords15.Name = "txtCoords15";
             this.txtCoords15.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords15.TabIndex = 53;
+            this.txtCoords15.TabIndex = 25;
             // 
             // label29
             // 
@@ -393,7 +393,7 @@ namespace uber_ocr
             this.txtCoords14.Location = new System.Drawing.Point(122, 503);
             this.txtCoords14.Name = "txtCoords14";
             this.txtCoords14.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords14.TabIndex = 51;
+            this.txtCoords14.TabIndex = 24;
             // 
             // label30
             // 
@@ -411,7 +411,7 @@ namespace uber_ocr
             this.txtCoords13.Location = new System.Drawing.Point(122, 483);
             this.txtCoords13.Name = "txtCoords13";
             this.txtCoords13.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords13.TabIndex = 49;
+            this.txtCoords13.TabIndex = 23;
             // 
             // label31
             // 
@@ -429,7 +429,7 @@ namespace uber_ocr
             this.txtCoords12.Location = new System.Drawing.Point(122, 463);
             this.txtCoords12.Name = "txtCoords12";
             this.txtCoords12.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords12.TabIndex = 47;
+            this.txtCoords12.TabIndex = 22;
             // 
             // label32
             // 
@@ -447,7 +447,7 @@ namespace uber_ocr
             this.txtCoords11.Location = new System.Drawing.Point(122, 443);
             this.txtCoords11.Name = "txtCoords11";
             this.txtCoords11.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords11.TabIndex = 45;
+            this.txtCoords11.TabIndex = 21;
             // 
             // label33
             // 
@@ -465,7 +465,7 @@ namespace uber_ocr
             this.txtCoords10.Location = new System.Drawing.Point(122, 423);
             this.txtCoords10.Name = "txtCoords10";
             this.txtCoords10.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords10.TabIndex = 43;
+            this.txtCoords10.TabIndex = 20;
             // 
             // label21
             // 
@@ -483,7 +483,7 @@ namespace uber_ocr
             this.txtCoords9.Location = new System.Drawing.Point(122, 403);
             this.txtCoords9.Name = "txtCoords9";
             this.txtCoords9.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords9.TabIndex = 41;
+            this.txtCoords9.TabIndex = 19;
             // 
             // label22
             // 
@@ -501,7 +501,7 @@ namespace uber_ocr
             this.txtCoords8.Location = new System.Drawing.Point(122, 383);
             this.txtCoords8.Name = "txtCoords8";
             this.txtCoords8.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords8.TabIndex = 39;
+            this.txtCoords8.TabIndex = 18;
             // 
             // label23
             // 
@@ -519,7 +519,7 @@ namespace uber_ocr
             this.txtCoords7.Location = new System.Drawing.Point(122, 363);
             this.txtCoords7.Name = "txtCoords7";
             this.txtCoords7.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords7.TabIndex = 37;
+            this.txtCoords7.TabIndex = 17;
             // 
             // label24
             // 
@@ -537,7 +537,7 @@ namespace uber_ocr
             this.txtCoords6.Location = new System.Drawing.Point(122, 343);
             this.txtCoords6.Name = "txtCoords6";
             this.txtCoords6.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords6.TabIndex = 35;
+            this.txtCoords6.TabIndex = 16;
             // 
             // label20
             // 
@@ -555,7 +555,7 @@ namespace uber_ocr
             this.txtCoords5.Location = new System.Drawing.Point(122, 323);
             this.txtCoords5.Name = "txtCoords5";
             this.txtCoords5.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords5.TabIndex = 33;
+            this.txtCoords5.TabIndex = 15;
             // 
             // label19
             // 
@@ -573,7 +573,7 @@ namespace uber_ocr
             this.txtCoords4.Location = new System.Drawing.Point(122, 303);
             this.txtCoords4.Name = "txtCoords4";
             this.txtCoords4.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords4.TabIndex = 31;
+            this.txtCoords4.TabIndex = 14;
             // 
             // label18
             // 
@@ -591,7 +591,7 @@ namespace uber_ocr
             this.txtCoords3.Location = new System.Drawing.Point(122, 283);
             this.txtCoords3.Name = "txtCoords3";
             this.txtCoords3.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords3.TabIndex = 29;
+            this.txtCoords3.TabIndex = 13;
             // 
             // label17
             // 
@@ -609,7 +609,7 @@ namespace uber_ocr
             this.txtCoords2.Location = new System.Drawing.Point(122, 263);
             this.txtCoords2.Name = "txtCoords2";
             this.txtCoords2.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords2.TabIndex = 27;
+            this.txtCoords2.TabIndex = 12;
             // 
             // label16
             // 
@@ -627,7 +627,7 @@ namespace uber_ocr
             this.txtDestCoords.Location = new System.Drawing.Point(122, 103);
             this.txtDestCoords.Name = "txtDestCoords";
             this.txtDestCoords.Size = new System.Drawing.Size(261, 20);
-            this.txtDestCoords.TabIndex = 25;
+            this.txtDestCoords.TabIndex = 4;
             // 
             // label15
             // 
@@ -645,7 +645,7 @@ namespace uber_ocr
             this.txtOrgCoords.Location = new System.Drawing.Point(122, 63);
             this.txtOrgCoords.Name = "txtOrgCoords";
             this.txtOrgCoords.Size = new System.Drawing.Size(261, 20);
-            this.txtOrgCoords.TabIndex = 23;
+            this.txtOrgCoords.TabIndex = 2;
             // 
             // label14
             // 
@@ -661,7 +661,7 @@ namespace uber_ocr
             this.btnWriteCSVFile.Location = new System.Drawing.Point(192, 655);
             this.btnWriteCSVFile.Name = "btnWriteCSVFile";
             this.btnWriteCSVFile.Size = new System.Drawing.Size(83, 23);
-            this.btnWriteCSVFile.TabIndex = 21;
+            this.btnWriteCSVFile.TabIndex = 32;
             this.btnWriteCSVFile.Text = "Write CSV File";
             this.btnWriteCSVFile.UseVisualStyleBackColor = true;
             this.btnWriteCSVFile.Click += new System.EventHandler(this.btnWriteCSVFile_Click);
@@ -671,7 +671,7 @@ namespace uber_ocr
             this.btnAdd.Location = new System.Drawing.Point(28, 655);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
-            this.btnAdd.TabIndex = 20;
+            this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add Record";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -683,7 +683,7 @@ namespace uber_ocr
             this.txtVehicleType.Location = new System.Drawing.Point(122, 183);
             this.txtVehicleType.Name = "txtVehicleType";
             this.txtVehicleType.Size = new System.Drawing.Size(261, 20);
-            this.txtVehicleType.TabIndex = 19;
+            this.txtVehicleType.TabIndex = 8;
             // 
             // txtTimeRequested
             // 
@@ -692,7 +692,7 @@ namespace uber_ocr
             this.txtTimeRequested.Location = new System.Drawing.Point(122, 203);
             this.txtTimeRequested.Name = "txtTimeRequested";
             this.txtTimeRequested.Size = new System.Drawing.Size(261, 20);
-            this.txtTimeRequested.TabIndex = 18;
+            this.txtTimeRequested.TabIndex = 9;
             // 
             // txtDateRequested
             // 
@@ -701,7 +701,7 @@ namespace uber_ocr
             this.txtDateRequested.Location = new System.Drawing.Point(122, 223);
             this.txtDateRequested.Name = "txtDateRequested";
             this.txtDateRequested.Size = new System.Drawing.Size(261, 20);
-            this.txtDateRequested.TabIndex = 17;
+            this.txtDateRequested.TabIndex = 10;
             // 
             // txtPointsEarned
             // 
@@ -710,7 +710,7 @@ namespace uber_ocr
             this.txtPointsEarned.Location = new System.Drawing.Point(122, 243);
             this.txtPointsEarned.Name = "txtPointsEarned";
             this.txtPointsEarned.Size = new System.Drawing.Size(261, 20);
-            this.txtPointsEarned.TabIndex = 16;
+            this.txtPointsEarned.TabIndex = 11;
             // 
             // label10
             // 
@@ -755,7 +755,7 @@ namespace uber_ocr
             this.txtOrgAddress.Location = new System.Drawing.Point(122, 43);
             this.txtOrgAddress.Name = "txtOrgAddress";
             this.txtOrgAddress.Size = new System.Drawing.Size(261, 20);
-            this.txtOrgAddress.TabIndex = 11;
+            this.txtOrgAddress.TabIndex = 1;
             // 
             // txtDestAddress
             // 
@@ -764,7 +764,7 @@ namespace uber_ocr
             this.txtDestAddress.Location = new System.Drawing.Point(122, 83);
             this.txtDestAddress.Name = "txtDestAddress";
             this.txtDestAddress.Size = new System.Drawing.Size(261, 20);
-            this.txtDestAddress.TabIndex = 10;
+            this.txtDestAddress.TabIndex = 3;
             // 
             // txtFare
             // 
@@ -773,7 +773,7 @@ namespace uber_ocr
             this.txtFare.Location = new System.Drawing.Point(122, 123);
             this.txtFare.Name = "txtFare";
             this.txtFare.Size = new System.Drawing.Size(261, 20);
-            this.txtFare.TabIndex = 9;
+            this.txtFare.TabIndex = 5;
             // 
             // txtDuration
             // 
@@ -782,7 +782,7 @@ namespace uber_ocr
             this.txtDuration.Location = new System.Drawing.Point(122, 143);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.Size = new System.Drawing.Size(261, 20);
-            this.txtDuration.TabIndex = 8;
+            this.txtDuration.TabIndex = 6;
             // 
             // txtDistance
             // 
@@ -800,7 +800,7 @@ namespace uber_ocr
             this.txtImageName.Location = new System.Drawing.Point(122, 23);
             this.txtImageName.Name = "txtImageName";
             this.txtImageName.Size = new System.Drawing.Size(261, 20);
-            this.txtImageName.TabIndex = 6;
+            this.txtImageName.TabIndex = 0;
             // 
             // label6
             // 
@@ -879,7 +879,7 @@ namespace uber_ocr
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1407, 923);
-            this.tabControl1.TabIndex = 9;
+            this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
@@ -968,7 +968,7 @@ namespace uber_ocr
             this.btnBrowseGeoSite.Location = new System.Drawing.Point(8, 20);
             this.btnBrowseGeoSite.Name = "btnBrowseGeoSite";
             this.btnBrowseGeoSite.Size = new System.Drawing.Size(159, 26);
-            this.btnBrowseGeoSite.TabIndex = 10;
+            this.btnBrowseGeoSite.TabIndex = 0;
             this.btnBrowseGeoSite.Text = "Browse To Georeferencer";
             this.btnBrowseGeoSite.UseVisualStyleBackColor = true;
             this.btnBrowseGeoSite.Click += new System.EventHandler(this.btnBrowseGeoSite_Click);
@@ -978,7 +978,7 @@ namespace uber_ocr
             this.btnTakeSnapshot.Location = new System.Drawing.Point(374, 20);
             this.btnTakeSnapshot.Name = "btnTakeSnapshot";
             this.btnTakeSnapshot.Size = new System.Drawing.Size(102, 26);
-            this.btnTakeSnapshot.TabIndex = 9;
+            this.btnTakeSnapshot.TabIndex = 2;
             this.btnTakeSnapshot.Text = "Take Snapshot";
             this.btnTakeSnapshot.UseVisualStyleBackColor = true;
             this.btnTakeSnapshot.Click += new System.EventHandler(this.btnTakeSnapshot_Click);
@@ -988,7 +988,7 @@ namespace uber_ocr
             this.btnScrapeCords.Location = new System.Drawing.Point(195, 20);
             this.btnScrapeCords.Name = "btnScrapeCords";
             this.btnScrapeCords.Size = new System.Drawing.Size(159, 26);
-            this.btnScrapeCords.TabIndex = 8;
+            this.btnScrapeCords.TabIndex = 1;
             this.btnScrapeCords.Text = "Scrape Coordinates";
             this.btnScrapeCords.UseVisualStyleBackColor = true;
             this.btnScrapeCords.Click += new System.EventHandler(this.btnScrapeCords_Click);
@@ -1035,7 +1035,7 @@ namespace uber_ocr
             this.txtDestFolder.Location = new System.Drawing.Point(119, 38);
             this.txtDestFolder.Name = "txtDestFolder";
             this.txtDestFolder.Size = new System.Drawing.Size(1695, 20);
-            this.txtDestFolder.TabIndex = 10;
+            this.txtDestFolder.TabIndex = 2;
             // 
             // btnBrowseDst
             // 
@@ -1043,7 +1043,7 @@ namespace uber_ocr
             this.btnBrowseDst.Location = new System.Drawing.Point(1820, 39);
             this.btnBrowseDst.Name = "btnBrowseDst";
             this.btnBrowseDst.Size = new System.Drawing.Size(31, 19);
-            this.btnBrowseDst.TabIndex = 11;
+            this.btnBrowseDst.TabIndex = 3;
             this.btnBrowseDst.Text = "...";
             this.btnBrowseDst.UseVisualStyleBackColor = true;
             this.btnBrowseDst.Click += new System.EventHandler(this.btnBrowseDst_Click);

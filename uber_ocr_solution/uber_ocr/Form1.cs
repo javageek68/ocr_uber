@@ -125,12 +125,12 @@ namespace uber_ocr
             string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
    
             //for now, we will use test data
-            string strContents = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape.txt");
+            //string strContents = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape.txt");
 
             // clear the table
             this.Init_coords_table();
             string strErrMsg = string.Empty;
-            if (parse_coords_from_page(strContents, ref strErrMsg))
+            if (parse_coords_from_page(sHtmlDecoded, ref strErrMsg))
             {
                 
             }
