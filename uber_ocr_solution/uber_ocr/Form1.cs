@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-//using IronOcr;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -22,11 +21,27 @@ namespace uber_ocr
         {
             InitializeComponent();
             this.Load += Form1_Load;
+            this.InitWeb();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             this.Init_data_table();
+        }
+
+        async void InitWeb()
+        {
+            try
+            {
+                await this.wbBrowser.EnsureCoreWebView2Async(null);
+                //this.wbBrowser.CoreWebView2.WebMessageReceived += CoreWebView2_WebMessageReceived;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("ERROR : {0} \r\n  You may need to download the WebView2 runtime at https://developer.microsoft.com/en-us/microsoft-edge/webview2/", ex.ToString()));
+                throw;
+            }
+
         }
 
         private void Init_data_table()
@@ -76,13 +91,22 @@ namespace uber_ocr
 
         private void btnBrowseGeoSite_Click(object sender, EventArgs e)
         {
-            this.wbBrowser.Navigate("www.georeferencer.com");
+            if (this.wbBrowser != null && this.wbBrowser.CoreWebView2 != null)
+            {
+                this.wbBrowser.CoreWebView2.Navigate("https://www.georeferencer.com");
+            }
         }
 
         private void btnScrapeCords_Click(object sender, EventArgs e)
         {
-         
-    
+            this.get_dom_from_WebView2();
+        }
+
+        async void get_dom_from_WebView2()
+        {
+            string sHtml = await wbBrowser.CoreWebView2.ExecuteScriptAsync("document.documentElement.outerHTML");
+            string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
+            this.txtDestFolder.Text = sHtmlDecoded;
         }
 
         private bool scrape_page(string strXPath, ref List<string> lstResults, ref string strErrMsg)
@@ -90,18 +114,18 @@ namespace uber_ocr
             bool blnRetVal = true;
             try
             {
-                HtmlWindow window = this.wbBrowser.Document.Window;
-                string str = window.Document.Body.OuterHtml;
+                //HtmlWindow window = this.wbBrowser.Document.Window;
+                //string str = window.Document.Body.OuterHtml;
 
-                HtmlAgilityPack.HtmlDocument HtmlDoc = new HtmlAgilityPack.HtmlDocument();
-                HtmlDoc.LoadHtml(str);
+                //HtmlAgilityPack.HtmlDocument HtmlDoc = new HtmlAgilityPack.HtmlDocument();
+                //HtmlDoc.LoadHtml(str);
 
-                HtmlAgilityPack.HtmlNodeCollection Nodes = HtmlDoc.DocumentNode.SelectNodes(strXPath);
-                lstResults = new List<string>();
-                foreach (HtmlAgilityPack.HtmlNode Node in Nodes)
-                {
-                    lstResults.Add (Node.OuterHtml);
-                }
+                //HtmlAgilityPack.HtmlNodeCollection Nodes = HtmlDoc.DocumentNode.SelectNodes(strXPath);
+                //lstResults = new List<string>();
+                //foreach (HtmlAgilityPack.HtmlNode Node in Nodes)
+                //{
+                //    lstResults.Add (Node.OuterHtml);
+                //}
             }
             catch (Exception ex)
             {

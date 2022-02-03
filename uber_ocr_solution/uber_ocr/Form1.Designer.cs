@@ -66,17 +66,17 @@ namespace uber_ocr
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.btnBrowseGeoSite = new System.Windows.Forms.Button();
             this.btnTakeSnapshot = new System.Windows.Forms.Button();
             this.btnScrapeCords = new System.Windows.Forms.Button();
             this.grdCoords = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.wbBrowser = new System.Windows.Forms.WebBrowser();
+            this.gbBrowser = new System.Windows.Forms.GroupBox();
             this.txtDestFolder = new System.Windows.Forms.TextBox();
             this.btnBrowseDst = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.wbBrowser = new Microsoft.Web.WebView2.WinForms.WebView2();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.ctmnuDataGrid.SuspendLayout();
             this.gbForm.SuspendLayout();
@@ -85,7 +85,8 @@ namespace uber_ocr
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbBrowser.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.wbBrowser)).BeginInit();
             this.SuspendLayout();
             // 
             // txtOutput
@@ -435,7 +436,7 @@ namespace uber_ocr
             this.tabPage2.Controls.Add(this.btnTakeSnapshot);
             this.tabPage2.Controls.Add(this.btnScrapeCords);
             this.tabPage2.Controls.Add(this.grdCoords);
-            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.gbBrowser);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -444,9 +445,19 @@ namespace uber_ocr
             this.tabPage2.Text = "Georeferencer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(525, 15);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(337, 31);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "This tab isn\'t working yet";
+            // 
             // btnBrowseGeoSite
             // 
-            this.btnBrowseGeoSite.Enabled = false;
             this.btnBrowseGeoSite.Location = new System.Drawing.Point(8, 20);
             this.btnBrowseGeoSite.Name = "btnBrowseGeoSite";
             this.btnBrowseGeoSite.Size = new System.Drawing.Size(159, 26);
@@ -457,7 +468,6 @@ namespace uber_ocr
             // 
             // btnTakeSnapshot
             // 
-            this.btnTakeSnapshot.Enabled = false;
             this.btnTakeSnapshot.Location = new System.Drawing.Point(374, 20);
             this.btnTakeSnapshot.Name = "btnTakeSnapshot";
             this.btnTakeSnapshot.Size = new System.Drawing.Size(102, 26);
@@ -468,7 +478,6 @@ namespace uber_ocr
             // 
             // btnScrapeCords
             // 
-            this.btnScrapeCords.Enabled = false;
             this.btnScrapeCords.Location = new System.Drawing.Point(195, 20);
             this.btnScrapeCords.Name = "btnScrapeCords";
             this.btnScrapeCords.Size = new System.Drawing.Size(159, 26);
@@ -479,8 +488,7 @@ namespace uber_ocr
             // 
             // grdCoords
             // 
-            this.grdCoords.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.grdCoords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdCoords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCoords.ContextMenuStrip = this.ctmnuDataGrid;
@@ -489,27 +497,18 @@ namespace uber_ocr
             this.grdCoords.Size = new System.Drawing.Size(273, 775);
             this.grdCoords.TabIndex = 7;
             // 
-            // groupBox1
+            // gbBrowser
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gbBrowser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.wbBrowser);
-            this.groupBox1.Location = new System.Drawing.Point(12, 52);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1088, 833);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Browser";
-            // 
-            // wbBrowser
-            // 
-            this.wbBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wbBrowser.Location = new System.Drawing.Point(3, 16);
-            this.wbBrowser.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbBrowser.Name = "wbBrowser";
-            this.wbBrowser.Size = new System.Drawing.Size(1082, 814);
-            this.wbBrowser.TabIndex = 0;
+            this.gbBrowser.Controls.Add(this.wbBrowser);
+            this.gbBrowser.Location = new System.Drawing.Point(12, 52);
+            this.gbBrowser.Name = "gbBrowser";
+            this.gbBrowser.Size = new System.Drawing.Size(1088, 833);
+            this.gbBrowser.TabIndex = 0;
+            this.gbBrowser.TabStop = false;
+            this.gbBrowser.Text = "Browser";
             // 
             // txtDestFolder
             // 
@@ -549,16 +548,16 @@ namespace uber_ocr
             this.label12.TabIndex = 13;
             this.label12.Text = "Destination Images";
             // 
-            // label13
+            // wbBrowser
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(525, 15);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(337, 31);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "This tab isn\'t working yet";
+            this.wbBrowser.CreationProperties = null;
+            this.wbBrowser.DefaultBackgroundColor = System.Drawing.Color.White;
+            this.wbBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wbBrowser.Location = new System.Drawing.Point(3, 16);
+            this.wbBrowser.Name = "wbBrowser";
+            this.wbBrowser.Size = new System.Drawing.Size(1082, 814);
+            this.wbBrowser.TabIndex = 0;
+            this.wbBrowser.ZoomFactor = 1D;
             // 
             // Form1
             // 
@@ -586,7 +585,8 @@ namespace uber_ocr
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdCoords)).EndInit();
-            this.groupBox1.ResumeLayout(false);
+            this.gbBrowser.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.wbBrowser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,10 +636,10 @@ namespace uber_ocr
         private System.Windows.Forms.Button btnTakeSnapshot;
         private System.Windows.Forms.Button btnScrapeCords;
         private System.Windows.Forms.DataGridView grdCoords;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.WebBrowser wbBrowser;
+        private System.Windows.Forms.GroupBox gbBrowser;
         private System.Windows.Forms.Button btnBrowseGeoSite;
         private System.Windows.Forms.Label label13;
+        private Microsoft.Web.WebView2.WinForms.WebView2 wbBrowser;
     }
 }
 
