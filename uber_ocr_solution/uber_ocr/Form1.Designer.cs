@@ -39,6 +39,48 @@ namespace uber_ocr
             this.ctmnuDataGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbForm = new System.Windows.Forms.GroupBox();
+            this.txtCoords20 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.txtCoords19 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtCoords18 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txtCoords17 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtCoords16 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtCoords15 = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtCoords14 = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCoords13 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.txtCoords12 = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtCoords11 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.txtCoords10 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtCoords9 = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtCoords8 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtCoords7 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.txtCoords6 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.txtCoords5 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtCoords4 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtCoords3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtCoords2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtDestCoords = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtOrgCoords = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.btnWriteCSVFile = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtVehicleType = new System.Windows.Forms.TextBox();
@@ -66,6 +108,8 @@ namespace uber_ocr
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cmbTargetField = new System.Windows.Forms.ComboBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnBrowseGeoSite = new System.Windows.Forms.Button();
             this.btnTakeSnapshot = new System.Windows.Forms.Button();
@@ -77,50 +121,6 @@ namespace uber_ocr
             this.btnBrowseDst = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtOrgCoords = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtDestCoords = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtCoords2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtCoords3 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtCoords4 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtCoords5 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtCoords6 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.txtCoords10 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.txtCoords9 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtCoords8 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txtCoords7 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.txtCoords19 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtCoords18 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.txtCoords17 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.txtCoords16 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txtCoords15 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtCoords14 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.txtCoords13 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.txtCoords12 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.txtCoords11 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtCoords20 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.cmbTargetField = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.ctmnuDataGrid.SuspendLayout();
             this.gbForm.SuspendLayout();
@@ -182,10 +182,11 @@ namespace uber_ocr
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdData.ContextMenuStrip = this.ctmnuDataGrid;
-            this.grdData.Location = new System.Drawing.Point(7, 758);
+            this.grdData.Location = new System.Drawing.Point(7, 684);
             this.grdData.Name = "grdData";
-            this.grdData.Size = new System.Drawing.Size(390, 129);
+            this.grdData.Size = new System.Drawing.Size(390, 203);
             this.grdData.TabIndex = 6;
+            this.grdData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdData_CellContentClick);
             // 
             // ctmnuDataGrid
             // 
@@ -277,9 +278,387 @@ namespace uber_ocr
             this.gbForm.TabStop = false;
             this.gbForm.Text = "Form";
             // 
+            // txtCoords20
+            // 
+            this.txtCoords20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords20.Location = new System.Drawing.Point(122, 623);
+            this.txtCoords20.Name = "txtCoords20";
+            this.txtCoords20.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords20.TabIndex = 63;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(15, 621);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(78, 13);
+            this.label34.TabIndex = 62;
+            this.label34.Text = "Coordinates 20";
+            // 
+            // txtCoords19
+            // 
+            this.txtCoords19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords19.Location = new System.Drawing.Point(122, 603);
+            this.txtCoords19.Name = "txtCoords19";
+            this.txtCoords19.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords19.TabIndex = 61;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(15, 601);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(78, 13);
+            this.label25.TabIndex = 60;
+            this.label25.Text = "Coordinates 19";
+            // 
+            // txtCoords18
+            // 
+            this.txtCoords18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords18.Location = new System.Drawing.Point(122, 583);
+            this.txtCoords18.Name = "txtCoords18";
+            this.txtCoords18.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords18.TabIndex = 59;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(15, 581);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(78, 13);
+            this.label26.TabIndex = 58;
+            this.label26.Text = "Coordinates 18";
+            // 
+            // txtCoords17
+            // 
+            this.txtCoords17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords17.Location = new System.Drawing.Point(122, 563);
+            this.txtCoords17.Name = "txtCoords17";
+            this.txtCoords17.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords17.TabIndex = 57;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(15, 561);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(78, 13);
+            this.label27.TabIndex = 56;
+            this.label27.Text = "Coordinates 17";
+            // 
+            // txtCoords16
+            // 
+            this.txtCoords16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords16.Location = new System.Drawing.Point(122, 543);
+            this.txtCoords16.Name = "txtCoords16";
+            this.txtCoords16.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords16.TabIndex = 55;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(15, 541);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 13);
+            this.label28.TabIndex = 54;
+            this.label28.Text = "Coordinates 16";
+            // 
+            // txtCoords15
+            // 
+            this.txtCoords15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords15.Location = new System.Drawing.Point(122, 523);
+            this.txtCoords15.Name = "txtCoords15";
+            this.txtCoords15.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords15.TabIndex = 53;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(15, 521);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(78, 13);
+            this.label29.TabIndex = 52;
+            this.label29.Text = "Coordinates 15";
+            // 
+            // txtCoords14
+            // 
+            this.txtCoords14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords14.Location = new System.Drawing.Point(122, 503);
+            this.txtCoords14.Name = "txtCoords14";
+            this.txtCoords14.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords14.TabIndex = 51;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(15, 501);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(78, 13);
+            this.label30.TabIndex = 50;
+            this.label30.Text = "Coordinates 14";
+            // 
+            // txtCoords13
+            // 
+            this.txtCoords13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords13.Location = new System.Drawing.Point(122, 483);
+            this.txtCoords13.Name = "txtCoords13";
+            this.txtCoords13.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords13.TabIndex = 49;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(15, 481);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(78, 13);
+            this.label31.TabIndex = 48;
+            this.label31.Text = "Coordinates 13";
+            // 
+            // txtCoords12
+            // 
+            this.txtCoords12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords12.Location = new System.Drawing.Point(122, 463);
+            this.txtCoords12.Name = "txtCoords12";
+            this.txtCoords12.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords12.TabIndex = 47;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(15, 461);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(78, 13);
+            this.label32.TabIndex = 46;
+            this.label32.Text = "Coordinates 12";
+            // 
+            // txtCoords11
+            // 
+            this.txtCoords11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords11.Location = new System.Drawing.Point(122, 443);
+            this.txtCoords11.Name = "txtCoords11";
+            this.txtCoords11.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords11.TabIndex = 45;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(15, 441);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(78, 13);
+            this.label33.TabIndex = 44;
+            this.label33.Text = "Coordinates 11";
+            // 
+            // txtCoords10
+            // 
+            this.txtCoords10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords10.Location = new System.Drawing.Point(122, 423);
+            this.txtCoords10.Name = "txtCoords10";
+            this.txtCoords10.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords10.TabIndex = 43;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(15, 421);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(78, 13);
+            this.label21.TabIndex = 42;
+            this.label21.Text = "Coordinates 10";
+            // 
+            // txtCoords9
+            // 
+            this.txtCoords9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords9.Location = new System.Drawing.Point(122, 403);
+            this.txtCoords9.Name = "txtCoords9";
+            this.txtCoords9.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords9.TabIndex = 41;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(15, 401);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(72, 13);
+            this.label22.TabIndex = 40;
+            this.label22.Text = "Coordinates 9";
+            // 
+            // txtCoords8
+            // 
+            this.txtCoords8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords8.Location = new System.Drawing.Point(122, 383);
+            this.txtCoords8.Name = "txtCoords8";
+            this.txtCoords8.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords8.TabIndex = 39;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(15, 381);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(72, 13);
+            this.label23.TabIndex = 38;
+            this.label23.Text = "Coordinates 8";
+            // 
+            // txtCoords7
+            // 
+            this.txtCoords7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords7.Location = new System.Drawing.Point(122, 363);
+            this.txtCoords7.Name = "txtCoords7";
+            this.txtCoords7.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords7.TabIndex = 37;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(15, 361);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(72, 13);
+            this.label24.TabIndex = 36;
+            this.label24.Text = "Coordinates 7";
+            // 
+            // txtCoords6
+            // 
+            this.txtCoords6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords6.Location = new System.Drawing.Point(122, 343);
+            this.txtCoords6.Name = "txtCoords6";
+            this.txtCoords6.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords6.TabIndex = 35;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(15, 341);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 13);
+            this.label20.TabIndex = 34;
+            this.label20.Text = "Coordinates 6";
+            // 
+            // txtCoords5
+            // 
+            this.txtCoords5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords5.Location = new System.Drawing.Point(122, 323);
+            this.txtCoords5.Name = "txtCoords5";
+            this.txtCoords5.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords5.TabIndex = 33;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(15, 321);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.TabIndex = 32;
+            this.label19.Text = "Coordinates 5";
+            // 
+            // txtCoords4
+            // 
+            this.txtCoords4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords4.Location = new System.Drawing.Point(122, 303);
+            this.txtCoords4.Name = "txtCoords4";
+            this.txtCoords4.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords4.TabIndex = 31;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(15, 301);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 13);
+            this.label18.TabIndex = 30;
+            this.label18.Text = "Coordinates 4";
+            // 
+            // txtCoords3
+            // 
+            this.txtCoords3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords3.Location = new System.Drawing.Point(122, 283);
+            this.txtCoords3.Name = "txtCoords3";
+            this.txtCoords3.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords3.TabIndex = 29;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(15, 281);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(72, 13);
+            this.label17.TabIndex = 28;
+            this.label17.Text = "Coordinates 3";
+            // 
+            // txtCoords2
+            // 
+            this.txtCoords2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtCoords2.Location = new System.Drawing.Point(122, 263);
+            this.txtCoords2.Name = "txtCoords2";
+            this.txtCoords2.Size = new System.Drawing.Size(261, 20);
+            this.txtCoords2.TabIndex = 27;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 261);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(72, 13);
+            this.label16.TabIndex = 26;
+            this.label16.Text = "Coordinates 2";
+            // 
+            // txtDestCoords
+            // 
+            this.txtDestCoords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDestCoords.Location = new System.Drawing.Point(122, 103);
+            this.txtDestCoords.Name = "txtDestCoords";
+            this.txtDestCoords.Size = new System.Drawing.Size(261, 20);
+            this.txtDestCoords.TabIndex = 25;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(15, 101);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Destination Coords";
+            // 
+            // txtOrgCoords
+            // 
+            this.txtOrgCoords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtOrgCoords.Location = new System.Drawing.Point(122, 63);
+            this.txtOrgCoords.Name = "txtOrgCoords";
+            this.txtOrgCoords.Size = new System.Drawing.Size(261, 20);
+            this.txtOrgCoords.TabIndex = 23;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(15, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.TabIndex = 22;
+            this.label14.Text = "Origin Coords";
+            // 
             // btnWriteCSVFile
             // 
-            this.btnWriteCSVFile.Location = new System.Drawing.Point(192, 708);
+            this.btnWriteCSVFile.Location = new System.Drawing.Point(192, 655);
             this.btnWriteCSVFile.Name = "btnWriteCSVFile";
             this.btnWriteCSVFile.Size = new System.Drawing.Size(83, 23);
             this.btnWriteCSVFile.TabIndex = 21;
@@ -289,7 +668,7 @@ namespace uber_ocr
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(28, 708);
+            this.btnAdd.Location = new System.Drawing.Point(28, 655);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 23);
             this.btnAdd.TabIndex = 20;
@@ -533,6 +912,46 @@ namespace uber_ocr
             this.tabPage2.Text = "Georeferencer";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // cmbTargetField
+            // 
+            this.cmbTargetField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTargetField.FormattingEnabled = true;
+            this.cmbTargetField.Items.AddRange(new object[] {
+            "Origin Coords",
+            "Dest Coords",
+            "Coordinates 2",
+            "Coordinates 3",
+            "Coordinates 4",
+            "Coordinates 5",
+            "Coordinates 6",
+            "Coordinates 7",
+            "Coordinates 8",
+            "Coordinates 9",
+            "Coordinates 10",
+            "Coordinates 11",
+            "Coordinates 12",
+            "Coordinates 13",
+            "Coordinates 14",
+            "Coordinates 15",
+            "Coordinates 16",
+            "Coordinates 17",
+            "Coordinates 18",
+            "Coordinates 19",
+            "Coordinates 20"});
+            this.cmbTargetField.Location = new System.Drawing.Point(1205, 34);
+            this.cmbTargetField.Name = "cmbTargetField";
+            this.cmbTargetField.Size = new System.Drawing.Size(169, 21);
+            this.cmbTargetField.TabIndex = 13;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(1128, 38);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(63, 13);
+            this.label35.TabIndex = 12;
+            this.label35.Text = "Target Field";
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -580,9 +999,9 @@ namespace uber_ocr
             | System.Windows.Forms.AnchorStyles.Right)));
             this.grdCoords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCoords.ContextMenuStrip = this.ctmnuDataGrid;
-            this.grdCoords.Location = new System.Drawing.Point(1120, 100);
+            this.grdCoords.Location = new System.Drawing.Point(1120, 71);
             this.grdCoords.Name = "grdCoords";
-            this.grdCoords.Size = new System.Drawing.Size(273, 775);
+            this.grdCoords.Size = new System.Drawing.Size(273, 804);
             this.grdCoords.TabIndex = 7;
             // 
             // gbBrowser
@@ -646,423 +1065,6 @@ namespace uber_ocr
             this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 13;
             this.label12.Text = "Destination Images";
-            // 
-            // txtOrgCoords
-            // 
-            this.txtOrgCoords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOrgCoords.Location = new System.Drawing.Point(122, 63);
-            this.txtOrgCoords.Name = "txtOrgCoords";
-            this.txtOrgCoords.Size = new System.Drawing.Size(261, 20);
-            this.txtOrgCoords.TabIndex = 23;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(15, 61);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(70, 13);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Origin Coords";
-            // 
-            // txtDestCoords
-            // 
-            this.txtDestCoords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDestCoords.Location = new System.Drawing.Point(122, 103);
-            this.txtDestCoords.Name = "txtDestCoords";
-            this.txtDestCoords.Size = new System.Drawing.Size(261, 20);
-            this.txtDestCoords.TabIndex = 25;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(15, 101);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 13);
-            this.label15.TabIndex = 24;
-            this.label15.Text = "Destination Coords";
-            // 
-            // txtCoords2
-            // 
-            this.txtCoords2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords2.Location = new System.Drawing.Point(122, 263);
-            this.txtCoords2.Name = "txtCoords2";
-            this.txtCoords2.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords2.TabIndex = 27;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(15, 261);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(72, 13);
-            this.label16.TabIndex = 26;
-            this.label16.Text = "Coordinates 2";
-            // 
-            // txtCoords3
-            // 
-            this.txtCoords3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords3.Location = new System.Drawing.Point(122, 283);
-            this.txtCoords3.Name = "txtCoords3";
-            this.txtCoords3.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords3.TabIndex = 29;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(15, 281);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(72, 13);
-            this.label17.TabIndex = 28;
-            this.label17.Text = "Coordinates 3";
-            // 
-            // txtCoords4
-            // 
-            this.txtCoords4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords4.Location = new System.Drawing.Point(122, 303);
-            this.txtCoords4.Name = "txtCoords4";
-            this.txtCoords4.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords4.TabIndex = 31;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(15, 301);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(72, 13);
-            this.label18.TabIndex = 30;
-            this.label18.Text = "Coordinates 4";
-            // 
-            // txtCoords5
-            // 
-            this.txtCoords5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords5.Location = new System.Drawing.Point(122, 323);
-            this.txtCoords5.Name = "txtCoords5";
-            this.txtCoords5.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords5.TabIndex = 33;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(15, 321);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(72, 13);
-            this.label19.TabIndex = 32;
-            this.label19.Text = "Coordinates 5";
-            // 
-            // txtCoords6
-            // 
-            this.txtCoords6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords6.Location = new System.Drawing.Point(122, 343);
-            this.txtCoords6.Name = "txtCoords6";
-            this.txtCoords6.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords6.TabIndex = 35;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(15, 341);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(72, 13);
-            this.label20.TabIndex = 34;
-            this.label20.Text = "Coordinates 6";
-            // 
-            // txtCoords10
-            // 
-            this.txtCoords10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords10.Location = new System.Drawing.Point(122, 423);
-            this.txtCoords10.Name = "txtCoords10";
-            this.txtCoords10.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords10.TabIndex = 43;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(15, 421);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(78, 13);
-            this.label21.TabIndex = 42;
-            this.label21.Text = "Coordinates 10";
-            // 
-            // txtCoords9
-            // 
-            this.txtCoords9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords9.Location = new System.Drawing.Point(122, 403);
-            this.txtCoords9.Name = "txtCoords9";
-            this.txtCoords9.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords9.TabIndex = 41;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(15, 401);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(72, 13);
-            this.label22.TabIndex = 40;
-            this.label22.Text = "Coordinates 9";
-            // 
-            // txtCoords8
-            // 
-            this.txtCoords8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords8.Location = new System.Drawing.Point(122, 383);
-            this.txtCoords8.Name = "txtCoords8";
-            this.txtCoords8.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords8.TabIndex = 39;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(15, 381);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(72, 13);
-            this.label23.TabIndex = 38;
-            this.label23.Text = "Coordinates 8";
-            // 
-            // txtCoords7
-            // 
-            this.txtCoords7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords7.Location = new System.Drawing.Point(122, 363);
-            this.txtCoords7.Name = "txtCoords7";
-            this.txtCoords7.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords7.TabIndex = 37;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(15, 361);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(72, 13);
-            this.label24.TabIndex = 36;
-            this.label24.Text = "Coordinates 7";
-            // 
-            // txtCoords19
-            // 
-            this.txtCoords19.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords19.Location = new System.Drawing.Point(122, 603);
-            this.txtCoords19.Name = "txtCoords19";
-            this.txtCoords19.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords19.TabIndex = 61;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(15, 601);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(78, 13);
-            this.label25.TabIndex = 60;
-            this.label25.Text = "Coordinates 19";
-            // 
-            // txtCoords18
-            // 
-            this.txtCoords18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords18.Location = new System.Drawing.Point(122, 583);
-            this.txtCoords18.Name = "txtCoords18";
-            this.txtCoords18.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords18.TabIndex = 59;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(15, 581);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(78, 13);
-            this.label26.TabIndex = 58;
-            this.label26.Text = "Coordinates 18";
-            // 
-            // txtCoords17
-            // 
-            this.txtCoords17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords17.Location = new System.Drawing.Point(122, 563);
-            this.txtCoords17.Name = "txtCoords17";
-            this.txtCoords17.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords17.TabIndex = 57;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(15, 561);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(78, 13);
-            this.label27.TabIndex = 56;
-            this.label27.Text = "Coordinates 17";
-            // 
-            // txtCoords16
-            // 
-            this.txtCoords16.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords16.Location = new System.Drawing.Point(122, 543);
-            this.txtCoords16.Name = "txtCoords16";
-            this.txtCoords16.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords16.TabIndex = 55;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(15, 541);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(78, 13);
-            this.label28.TabIndex = 54;
-            this.label28.Text = "Coordinates 16";
-            // 
-            // txtCoords15
-            // 
-            this.txtCoords15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords15.Location = new System.Drawing.Point(122, 523);
-            this.txtCoords15.Name = "txtCoords15";
-            this.txtCoords15.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords15.TabIndex = 53;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 521);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(78, 13);
-            this.label29.TabIndex = 52;
-            this.label29.Text = "Coordinates 15";
-            // 
-            // txtCoords14
-            // 
-            this.txtCoords14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords14.Location = new System.Drawing.Point(122, 503);
-            this.txtCoords14.Name = "txtCoords14";
-            this.txtCoords14.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords14.TabIndex = 51;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(15, 501);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(78, 13);
-            this.label30.TabIndex = 50;
-            this.label30.Text = "Coordinates 14";
-            // 
-            // txtCoords13
-            // 
-            this.txtCoords13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords13.Location = new System.Drawing.Point(122, 483);
-            this.txtCoords13.Name = "txtCoords13";
-            this.txtCoords13.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords13.TabIndex = 49;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(15, 481);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(78, 13);
-            this.label31.TabIndex = 48;
-            this.label31.Text = "Coordinates 13";
-            // 
-            // txtCoords12
-            // 
-            this.txtCoords12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords12.Location = new System.Drawing.Point(122, 463);
-            this.txtCoords12.Name = "txtCoords12";
-            this.txtCoords12.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords12.TabIndex = 47;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(15, 461);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(78, 13);
-            this.label32.TabIndex = 46;
-            this.label32.Text = "Coordinates 12";
-            // 
-            // txtCoords11
-            // 
-            this.txtCoords11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords11.Location = new System.Drawing.Point(122, 443);
-            this.txtCoords11.Name = "txtCoords11";
-            this.txtCoords11.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords11.TabIndex = 45;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(15, 441);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(78, 13);
-            this.label33.TabIndex = 44;
-            this.label33.Text = "Coordinates 11";
-            // 
-            // txtCoords20
-            // 
-            this.txtCoords20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCoords20.Location = new System.Drawing.Point(122, 623);
-            this.txtCoords20.Name = "txtCoords20";
-            this.txtCoords20.Size = new System.Drawing.Size(261, 20);
-            this.txtCoords20.TabIndex = 63;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(15, 621);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(78, 13);
-            this.label34.TabIndex = 62;
-            this.label34.Text = "Coordinates 20";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(1128, 38);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(63, 13);
-            this.label35.TabIndex = 12;
-            this.label35.Text = "Target Field";
-            // 
-            // cmbTargetField
-            // 
-            this.cmbTargetField.FormattingEnabled = true;
-            this.cmbTargetField.Items.AddRange(new object[] {
-            "Origin Coords",
-            "Dest Coords",
-            "Coordinates 2",
-            "Coordinates 3",
-            "Coordinates 4",
-            "Coordinates 5",
-            "Coordinates 6",
-            "Coordinates 7",
-            "Coordinates 8",
-            "Coordinates 9",
-            "Coordinates 10",
-            "Coordinates 11",
-            "Coordinates 12",
-            "Coordinates 13",
-            "Coordinates 14",
-            "Coordinates 15",
-            "Coordinates 16",
-            "Coordinates 17",
-            "Coordinates 18",
-            "Coordinates 19",
-            "Coordinates 20"});
-            this.cmbTargetField.Location = new System.Drawing.Point(1205, 34);
-            this.cmbTargetField.Name = "cmbTargetField";
-            this.cmbTargetField.Size = new System.Drawing.Size(169, 21);
-            this.cmbTargetField.TabIndex = 13;
             // 
             // Form1
             // 

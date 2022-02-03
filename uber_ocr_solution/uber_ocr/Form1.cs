@@ -23,8 +23,11 @@ namespace uber_ocr
         {
             InitializeComponent();
             this.Load += Form1_Load;
+            this.grdCoords.RowHeaderMouseClick += GrdCoords_RowHeaderMouseClick;
             this.InitWeb();
+            this.cmbTargetField.SelectedIndex = 0;
         }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -219,7 +222,6 @@ namespace uber_ocr
             return strRetVal.Trim();
         }
 
-
         private bool scrape_page(string strXPath, ref List<string> lstResults, ref string strErrMsg)
         {
             bool blnRetVal = true;
@@ -353,13 +355,35 @@ namespace uber_ocr
         private void btnAdd_Click(object sender, EventArgs e)
         {
             DataRow row = this.dtCSVData.NewRow();
+            row["Coordinates 10"] = this.txtCoords10.Text;
+            row["Coordinates 11"] = this.txtCoords11.Text;
+            row["Coordinates 12"] = this.txtCoords12.Text;
+            row["Coordinates 13"] = this.txtCoords13.Text;
+            row["Coordinates 14"] = this.txtCoords14.Text;
+            row["Coordinates 15"] = this.txtCoords15.Text;
+            row["Coordinates 16"] = this.txtCoords16.Text;
+            row["Coordinates 17"] = this.txtCoords17.Text;
+            row["Coordinates 18"] = this.txtCoords18.Text;
+            row["Coordinates 19"] = this.txtCoords19.Text;
+            row["Coordinates 20"] = this.txtCoords20.Text;
+            row["Coordinates 2"] = this.txtCoords2.Text;
+            row["Coordinates 3"] = this.txtCoords3.Text;
+            row["Coordinates 4"] = this.txtCoords4.Text;
+            row["Coordinates 5"] = this.txtCoords5.Text;
+            row["Coordinates 6"] = this.txtCoords6.Text;
+            row["Coordinates 7"] = this.txtCoords7.Text;
+            row["Coordinates 8"] = this.txtCoords8.Text;
+            row["Coordinates 9"] = this.txtCoords9.Text;
             row["Date Requested"] = this.txtDateRequested.Text;
             row["Destination Address"] = this.txtDestAddress.Text;
+            row["Destination Coordinates"] = this.txtDestCoords.Text;
             row["Distance"] = this.txtDistance.Text;
             row["Duration"] = this.txtDuration.Text;
             row["Fare"] = this.txtFare.Text;
             row["Image Filename"] = this.txtImageName.Text;
             row["Origin Address"] = this.txtOrgAddress.Text;
+            row["Origin Coordinates"] = this.txtOrgCoords.Text;
+            row["Origin Coordinates2"] = this.txtOrgCoords.Text;
             row["Points Earned"] = this.txtPointsEarned.Text;
             row["Time Requested"] = this.txtTimeRequested.Text;
             row["Vehicle Type"] = this.txtVehicleType.Text;
@@ -689,6 +713,48 @@ namespace uber_ocr
             return blnRetVal;
         }
 
+        private void grdCoords_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GrdCoords_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedRowCollection grdRows = this.grdCoords.SelectedRows;
+            foreach (DataGridViewRow row in grdRows)
+            {
+                string strId = (string)row.Cells["id"].Value;
+                string strX = (string)row.Cells["x"].Value;
+                string strY = (string)row.Cells["y"].Value;
+
+                string strValue = string.Format("{0}, {1}", strX, strY);
+
+                string strTarg = this.cmbTargetField.Text;
+                if (strTarg == "Origin Coords") this.txtOrgCoords.Text = strValue;
+                else if (strTarg == "Dest Coords") this.txtDestCoords.Text = strValue;
+                else if (strTarg == "Coordinates 2") this.txtCoords2.Text = strValue;
+                else if (strTarg == "Coordinates 3") this.txtCoords3.Text = strValue;
+                else if (strTarg == "Coordinates 4") this.txtCoords4.Text = strValue;
+                else if (strTarg == "Coordinates 5") this.txtCoords5.Text = strValue;
+                else if (strTarg == "Coordinates 6") this.txtCoords6.Text = strValue;
+                else if (strTarg == "Coordinates 7") this.txtCoords7.Text = strValue;
+                else if (strTarg == "Coordinates 8") this.txtCoords8.Text = strValue;
+                else if (strTarg == "Coordinates 9") this.txtCoords9.Text = strValue;
+                else if (strTarg == "Coordinates 10") this.txtCoords10.Text = strValue;
+                else if (strTarg == "Coordinates 11") this.txtCoords11.Text = strValue;
+                else if (strTarg == "Coordinates 12") this.txtCoords12.Text = strValue;
+                else if (strTarg == "Coordinates 13") this.txtCoords13.Text = strValue;
+                else if (strTarg == "Coordinates 14") this.txtCoords14.Text = strValue;
+                else if (strTarg == "Coordinates 15") this.txtCoords15.Text = strValue;
+                else if (strTarg == "Coordinates 16") this.txtCoords16.Text = strValue;
+                else if (strTarg == "Coordinates 17") this.txtCoords17.Text = strValue;
+                else if (strTarg == "Coordinates 18") this.txtCoords18.Text = strValue;
+                else if (strTarg == "Coordinates 19") this.txtCoords19.Text = strValue;
+                else if (strTarg == "Coordinates 20") this.txtCoords20.Text = strValue;
+
+            }
+        }
+
         private void clearMsg()
         {
             this.txtOutput.Text = "";
@@ -712,6 +778,9 @@ namespace uber_ocr
             this.txtOutput.AppendText(string.Format("Error {0}\r\n", strMsg));
         }
 
+        private void grdData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
