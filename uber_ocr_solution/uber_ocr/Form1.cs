@@ -26,10 +26,13 @@ namespace uber_ocr
             InitializeComponent();
             this.Load += Form1_Load;
             this.grdCoords.RowHeaderMouseClick += GrdCoords_RowHeaderMouseClick;
+            this.grdCoords.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdCoords.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            this.grdCoords.AllowUserToOrderColumns = true;
+            this.grdCoords.AllowUserToResizeColumns = true;
             this.InitWeb();
             this.cmbTargetField.SelectedIndex = 0;
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -122,152 +125,53 @@ namespace uber_ocr
         async void get_dom_from_WebView2()
         {
             string sHtml = await wbBrowser.CoreWebView2.ExecuteScriptAsync("document.documentElement.outerHTML");
-            string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
+            //string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
    
             //for now, we will use test data
-            //string strContents = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape.txt");
+            string sHtmlDecoded = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape-class.txt");
 
             // clear the table
             this.Init_coords_table();
-            string strErrMsg = string.Empty;
-            if (parse_coords_from_page(sHtmlDecoded, ref strErrMsg))
+
+            List<List<string>> lstTable = this.parse_data_table(sHtmlDecoded);
+
+            foreach (List<string> lstRow in lstTable)
             {
-                
-            }
-            else
-            {
-                this.handleError(strErrMsg);
+                DataRow row = this.dtCoordsData.NewRow();
+                row["id"] = lstRow[0];
+                row["x"] = lstRow[1];
+                row["y"] = lstRow[2];
+                this.dtCoordsData.Rows.Add(row);
+
+                this.grdCoords.DataSource = this.dtCoordsData;
             }
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="strSource"></param>
-        /// <param name="strErrMsg"></param>
+        /// <param name="strHtml"></param>
         /// <returns></returns>
-        private bool parse_coords_from_page(string strSource, ref string strErrMsg)
+        private List<List<string>> parse_data_table(string strHtml)
         {
-            bool blnRetVal = true;
-            try
-            {
-                bool blnInTableCoords = false;
-                string[] strLines = strSource.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                foreach(string strLine in strLines)
-                {
-                    if (strLine.Contains("coordsModeTable")) blnInTableCoords = true;
-                    if (blnInTableCoords)
-                    {
-                        // we found the start of the coord table.  the next tbody contains all coordinates
-                        if (strLine.Contains("tbody"))
-                        {
-                            // this line contains the entire table of coords
-                            blnRetVal = this.parse_coords_from_html_table(strLine, ref strErrMsg);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(strHtml);
+
+            List<List<string>> table = doc.DocumentNode.SelectSingleNode("//table[@id='coordsModeTable']")
+                        .Descendants("tr")
+                        .Skip(1)
+                        .Where(tr => tr.Elements("td").Count() > 1)
+                        .Select(tr => tr.Elements("td").Select(td => td.InnerText.Trim()).ToList())
+                        .ToList();
+
+            return table;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="strTable"></param>
-        /// <param name="strErrMsg"></param>
-        /// <returns></returns>
-        private bool parse_coords_from_html_table(string strTable, ref string strErrMsg)
-        {
-            bool blnRetVal = true;
-            try
-            {
-                string[] strTRs = strTable.Split(new string[]{"<tr>"}, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string strTR in strTRs)
-                {
-                    //skip empty table rows
-                    if (!strTR.Contains("<td>")) continue;
-                    string[] strTDs = strTR.Split(new string[]{"<td>"}, StringSplitOptions.RemoveEmptyEntries);
-                    // there should be exactly 3 TDs
-                    string strId = this.parse_value_from_td(strTDs[0]);
-                    string strX = this.parse_value_from_td(strTDs[1]);
-                    string strY = this.parse_value_from_td(strTDs[2]);
-
-                    DataRow row = this.dtCoordsData.NewRow();
-                    row["id"] = strId;
-                    row["x"] = strX;
-                    row["y"] = strY;
-                    this.dtCoordsData.Rows.Add(row);
-
-                    this.grdCoords.DataSource = this.dtCoordsData;
-                }
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
-        }
-
-        private string parse_value_from_td(string strTD)
-        {
-            string strRetVal = strTD;
-
-            strRetVal = strRetVal.Replace("</td>", "").Replace("<td>", "").Replace("</tr>", "").Replace("</tbody>", "");
-
-            return strRetVal.Trim();
-        }
-
-        private bool scrape_page(string strXPath, ref List<string> lstResults, ref string strErrMsg)
-        {
-            bool blnRetVal = true;
-            try
-            {
-                //HtmlWindow window = this.wbBrowser.Document.Window;
-                //string str = window.Document.Body.OuterHtml;
-
-                //HtmlAgilityPack.HtmlDocument HtmlDoc = new HtmlAgilityPack.HtmlDocument();
-                //HtmlDoc.LoadHtml(str);
-
-                //HtmlAgilityPack.HtmlNodeCollection Nodes = HtmlDoc.DocumentNode.SelectNodes(strXPath);
-                //lstResults = new List<string>();
-                //foreach (HtmlAgilityPack.HtmlNode Node in Nodes)
-                //{
-                //    lstResults.Add (Node.OuterHtml);
-                //}
-            }
-            catch (Exception ex)
-            {
-                strErrMsg = ex.ToString();
-                blnRetVal = false;
-            }
-            return blnRetVal;
-        }
-
-        private bool populate_coords_grid(List<string> lstResults, ref string strErrMsg)
-        {
-            bool blnRetVal = true;
-            try
-            {
-                foreach(string strLine in lstResults)
-                {
-                    // parse coords form html
-                    // add to table
-                }
-            }
-            catch (Exception ex)
-            {
-                strErrMsg = ex.ToString();
-                blnRetVal = false;
-            }
-            return blnRetVal;
-        }
-
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTakeSnapshot_Click(object sender, EventArgs e)
         {
             string strImage = this.txtImageName.Text;
@@ -291,29 +195,6 @@ namespace uber_ocr
             Graphics g = Graphics.FromImage(bmp);
             g.CopyFromScreen(r.Left, r.Top, 0, 0, bmp.Size, CopyPixelOperation.SourceCopy);
             bmp.Save(fileName, format);
-        }
-
-        private void TakeScreenshot2()
-        {
-            //using (var browser = new System.Windows.Forms.WebBrowser())
-            //{
-            //    browser.DocumentCompleted += delegate
-            //    {
-            //        using (var pic = new Bitmap(browser.Width, browser.Height))
-            //        {
-            //            browser.DrawToBitmap(pic, new Rectangle(0, 0, pic.Width, pic.Height));
-            //            pic.Save(imagePath);
-            //        }
-            //    };
-
-            //    browser.Navigate(Server.MapPath("~") + htmlPath); //a file or a url
-            //    browser.ScrollBarsEnabled = false;
-
-            //    while (browser.ReadyState != System.Windows.Forms.WebBrowserReadyState.Complete)
-            //    {
-            //        System.Windows.Forms.Application.DoEvents();
-            //    }
-            //}
         }
 
         private void lstFiles_SelectedIndexChanged(object sender, EventArgs e)

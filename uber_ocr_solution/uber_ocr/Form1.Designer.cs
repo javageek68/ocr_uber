@@ -914,6 +914,7 @@ namespace uber_ocr
             // 
             // cmbTargetField
             // 
+            this.cmbTargetField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTargetField.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTargetField.FormattingEnabled = true;
             this.cmbTargetField.Items.AddRange(new object[] {
@@ -945,6 +946,7 @@ namespace uber_ocr
             // 
             // label35
             // 
+            this.label35.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(1128, 38);
             this.label35.Name = "label35";
