@@ -274,7 +274,9 @@ namespace uber_ocr
             string strImagePath = string.Format(@"{0}\\{1}", this.txtDestFolder.Text, strImage);
             try
             {
-                this.TakeCroppedScreenShot(strImagePath, this.wbBrowser.Location.X, this.wbBrowser.Location.Y, this.wbBrowser.Width, this.wbBrowser.Height, System.Drawing.Imaging.ImageFormat.Jpeg);
+                Rectangle bounds = Screen.GetBounds(Point.Empty);
+                
+                this.TakeCroppedScreenShot(strImagePath, this.Location.X, this.Location.Y , this.Width, this.Height, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
             catch (Exception ex)
             {
