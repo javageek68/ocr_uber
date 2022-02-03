@@ -15,7 +15,9 @@ namespace uber_ocr
         string strOutFile = @"C:\Users\mike\OneDrive\Documents\School\CS_685_Foundations_of_Data_Science\Homework\Uber_Trip_Annotation\out_file.csv";
         string strHeader = "Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20";
 
-        DataTable dtData = new DataTable();
+        DataTable dtCSVData = new DataTable();
+
+        DataTable dtCoordsData = new DataTable();
 
         public Form1()
         {
@@ -51,8 +53,18 @@ namespace uber_ocr
             string[] strColumns = strColHeaders.Split(",".ToCharArray());
             foreach(string strColumn in strColumns)
             {
-                this.dtData.Columns.Add(strColumn.Trim());
+                this.dtCSVData.Columns.Add(strColumn.Trim());
             }
+
+   
+        }
+
+        private void Init_coords_table()
+        {
+            this.dtCoordsData = new DataTable();
+            this.dtCoordsData.Columns.Add("id");
+            this.dtCoordsData.Columns.Add("x");
+            this.dtCoordsData.Columns.Add("y");
         }
 
         /// <summary>
@@ -107,7 +119,106 @@ namespace uber_ocr
             string sHtml = await wbBrowser.CoreWebView2.ExecuteScriptAsync("document.documentElement.outerHTML");
             string sHtmlDecoded = System.Text.RegularExpressions.Regex.Unescape(sHtml);
             this.txtDestFolder.Text = sHtmlDecoded;
+
+            //for now, we will use test data
+            string strContents = System.IO.File.ReadAllText(@"C:\Users\mike\Documents\Code\DotNet\ocr_uber\uber_ocr_solution\uber_ocr\docs\sample_scrape.txt");
+
+            // clear the table
+            this.Init_coords_table();
+            string strErrMsg = string.Empty;
+            if (parse_coords_from_page(strContents, ref strErrMsg))
+            {
+                
+            }
+            else
+            {
+                this.handleError(strErrMsg);
+            }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strSource"></param>
+        /// <param name="strErrMsg"></param>
+        /// <returns></returns>
+        private bool parse_coords_from_page(string strSource, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                bool blnInTableCoords = false;
+                string[] strLines = strSource.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                foreach(string strLine in strLines)
+                {
+                    if (strLine.Contains("coordsModeTable")) blnInTableCoords = true;
+                    if (blnInTableCoords)
+                    {
+                        // we found the start of the coord table.  the next tbody contains all coordinates
+                        if (strLine.Contains("tbody"))
+                        {
+                            // this line contains the entire table of coords
+                            blnRetVal = this.parse_coords_from_html_table(strLine, ref strErrMsg);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                blnRetVal = false;
+                strErrMsg = ex.ToString();
+            }
+            return blnRetVal;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strTable"></param>
+        /// <param name="strErrMsg"></param>
+        /// <returns></returns>
+        private bool parse_coords_from_html_table(string strTable, ref string strErrMsg)
+        {
+            bool blnRetVal = true;
+            try
+            {
+                string[] strTRs = strTable.Split(new string[]{"<tr>"}, StringSplitOptions.RemoveEmptyEntries);
+                foreach (string strTR in strTRs)
+                {
+                    //skip empty table rows
+                    if (!strTR.Contains("<td>")) continue;
+                    string[] strTDs = strTR.Split(new string[]{"<td>"}, StringSplitOptions.RemoveEmptyEntries);
+                    // there should be exactly 3 TDs
+                    string strId = this.parse_value_from_td(strTDs[0]);
+                    string strX = this.parse_value_from_td(strTDs[1]);
+                    string strY = this.parse_value_from_td(strTDs[2]);
+
+                    DataRow row = this.dtCoordsData.NewRow();
+                    row["id"] = strId;
+                    row["x"] = strX;
+                    row["y"] = strY;
+                    this.dtCoordsData.Rows.Add(row);
+
+                    this.grdCoords.DataSource = this.dtCoordsData;
+                }
+            }
+            catch (Exception ex)
+            {
+                blnRetVal = false;
+                strErrMsg = ex.ToString();
+            }
+            return blnRetVal;
+        }
+
+        private string parse_value_from_td(string strTD)
+        {
+            string strRetVal = strTD;
+
+            strRetVal = strRetVal.Replace("</td>", "").Replace("<td>", "").Replace("</tr>", "").Replace("</tbody>", "");
+
+            return strRetVal.Trim();
+        }
+
 
         private bool scrape_page(string strXPath, ref List<string> lstResults, ref string strErrMsg)
         {
@@ -241,7 +352,7 @@ namespace uber_ocr
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DataRow row = this.dtData.NewRow();
+            DataRow row = this.dtCSVData.NewRow();
             row["Date Requested"] = this.txtDateRequested.Text;
             row["Destination Address"] = this.txtDestAddress.Text;
             row["Distance"] = this.txtDistance.Text;
@@ -252,9 +363,9 @@ namespace uber_ocr
             row["Points Earned"] = this.txtPointsEarned.Text;
             row["Time Requested"] = this.txtTimeRequested.Text;
             row["Vehicle Type"] = this.txtVehicleType.Text;
-            this.dtData.Rows.Add(row);
+            this.dtCSVData.Rows.Add(row);
 
-            this.grdData.DataSource = this.dtData;
+            this.grdData.DataSource = this.dtCSVData;
         }
 
         /// <summary>
@@ -268,10 +379,10 @@ namespace uber_ocr
             foreach(DataGridViewRow row in grdRows)
             {
                 string file = (string)row.Cells["Image Filename"].Value;
-                DataRow[] drr = this.dtData.Select("[Image Filename]='" + file + "' ");
+                DataRow[] drr = this.dtCSVData.Select("[Image Filename]='" + file + "' ");
                 for (int i = 0; i < drr.Length; i++)
                     drr[i].Delete();
-                this.dtData.AcceptChanges();
+                this.dtCSVData.AcceptChanges();
 
             }
         }
@@ -288,11 +399,11 @@ namespace uber_ocr
                 string strFile = this.sfdFiles.FileName;
                 StringBuilder sb = new StringBuilder();
 
-                IEnumerable<string> columnNames = this.dtData.Columns.Cast<DataColumn>().
+                IEnumerable<string> columnNames = this.dtCSVData.Columns.Cast<DataColumn>().
                                                   Select(column => column.ColumnName);
                 sb.AppendLine(string.Join(",", columnNames));
 
-                foreach (DataRow row in this.dtData.Rows)
+                foreach (DataRow row in this.dtCSVData.Rows)
                 {
                     IEnumerable<string> fields = row.ItemArray.Select(field =>  string.Format("\"{0}\"", field.ToString() ) );
                     sb.AppendLine(string.Join(",", fields));
@@ -492,6 +603,9 @@ namespace uber_ocr
             try
             {
                 strImageFilename = strFile;
+
+                //clear the msg box
+                this.clearMsg();
                 
                 //parse the lines in the ocr text
                 string[] strLines = strInput.Split("\n".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
@@ -575,26 +689,9 @@ namespace uber_ocr
             return blnRetVal;
         }
 
-        /// <summary>
-        /// write a csv line to the out file
-        /// </summary>
-        /// <param name="strOutFile"></param>
-        /// <param name="strCSV"></param>
-        /// <param name="strErrMsg"></param>
-        /// <returns></returns>
-        private bool write_to_file(string strOutFile, string strCSV, ref string strErrMsg)
+        private void clearMsg()
         {
-            bool blnRetVal = true;
-            try
-            {
-                System.IO.File.WriteAllText(strOutFile, strCSV);
-            }
-            catch (Exception ex)
-            {
-                blnRetVal = false;
-                strErrMsg = ex.ToString();
-            }
-            return blnRetVal;
+            this.txtOutput.Text = "";
         }
 
         /// <summary>
