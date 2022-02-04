@@ -1,0 +1,564 @@
+"<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="author" content="Klokan Technologies GmbH (http://www.klokantech.com/)">
+    <meta name="keywords" content="georeferencer, maps, scans, online, georeferencing">
+    <meta name="description" content="Georeferencer is an online tool that assigns geographical location to any image.">
+    <meta name="theme-color" content="#e68100">
+    <meta name="google" value="notranslate">
+    <meta property="og:title" content="Participant2_2019_March2019_Shot0147.jpg">
+    <meta property="og:image" content="https://images.iiifhosting.com/iiif/960ba5f58e91ec22561eb44b18521b67089da93459de080aa4d578f61c96fd12/full/!600,600/0/default.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>Participant2_2019_March2019_Shot0147.jpg</title>
+    
+<link rel="stylesheet" href="/styles/georeference.css?customized=True&amp;t=1617282491" media="all">
+
+    
+<script type="application/javascript" async="" defer="" src="https://by2.uservoice.com/t2/35435/web/b1deecd4-8ae1-4436-5639-74910cd2d825/track.js?_=1643915524056&amp;s=1&amp;c=__uvSessionData0&amp;d=eyJlIjp7InUiOiJodHRwczovL3d3dy5nZW9yZWZlcmVuY2VyLmNvbS9tYXBzL2NhNTlkZDBlLWYzMWUtNGEwNy05YmZlLTY4MjI0NjIxNTgzNy9nZW9yZWZlcmVuY2UiLCJyIjoiaHR0cHM6Ly93d3cuZ2VvcmVmZXJlbmNlci5jb20vIn19"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-W4NH1B56KN&amp;l=dataLayer&amp;cx=c"></script><script type="text/javascript" async="" src="//widget.uservoice.com/syeKPJsJIkzD89rCRwY3Q.js"></script><script type="text/javascript" src="https://maps.google.com/maps/api/js?v=3.27&amp;key=AIzaSyDpoU9NXc34V2KAdHAy_guRc1ZR98DknGs"></script><script type="text/javascript" async="" src="https://cdnjs.cloudflare.com/ajax/libs/stacktrace.js/1.3.1/stacktrace.min.js"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-T6GHTWF"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.14/proj4.js"></script>
+<script src="/static/js/georeference.js?t=1637918215"></script>
+
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T6GHTWF');
+    </script>
+  <style type="text/css" media="screen">.uv-icon{box-sizing:border-box;display:inline-block;cursor:pointer;position:relative;transition:all 300ms;width:39px;height:39px;position:fixed;z-index:100002;opacity:0.8;transition:opacity 100ms}.uv-icon.uv-bottom-right{bottom:10px;right:12px}.uv-icon.uv-top-right{top:10px;right:12px}.uv-icon.uv-bottom-left{bottom:10px;left:12px}.uv-icon.uv-top-left{top:10px;left:12px}.uv-icon.uv-is-selected{opacity:1}.uv-icon svg{width:39px;height:39px}.uv-icon .uv-tooltip-container{position:relative}.uv-icon .uv-tooltip-container .uv-icon-tooltip{display:none;position:absolute;height:20px;padding:4px 8px;background-color:#464653;color:white;font-size:12px;border-radius:4px;line-height:18px;font-family:"Open Sans", sans-serif;white-space:nowrap}.uv-icon .uv-tooltip-container .uv-icon-tooltip.left,.uv-icon .uv-tooltip-container .uv-icon-tooltip.right{top:0;bottom:0;margin:auto 10px}.uv-icon .uv-tooltip-container .uv-icon-tooltip.top,.uv-icon .uv-tooltip-container .uv-icon-tooltip.bottom{transform:translate(-30%);margin:10px auto}.uv-icon .uv-tooltip-container .uv-icon-tooltip.top{bottom:100%}.uv-icon .uv-tooltip-container .uv-icon-tooltip.bottom{top:100%}.uv-icon .uv-tooltip-container .uv-icon-tooltip.left{right:100%}.uv-icon .uv-tooltip-container .uv-icon-tooltip.right{left:100%}.uv-icon .uv-tooltip-container:hover .uv-icon-tooltip{display:block}.uv-icon-trigger{display:block;width:39px;height:39px;border:none;padding:0;cursor:pointer;background:none}.uv-popover{font-family:sans-serif;font-weight:100;font-size:13px;color:black;position:fixed;z-index:100001}.uv-popover-content{border-radius:5px;background:white;border:1px solid transparent;position:relative;width:325px;height:325px;transition:background 200ms}.uv-bottom .uv-popover-content{box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-top .uv-popover-content{box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-left .uv-popover-content{box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-right .uv-popover-content{box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-ie8 .uv-popover-content{position:relative}.uv-ie8 .uv-popover-content .uv-popover-content-shadow{display:block;background:black;content:'';position:absolute;left:-15px;top:-15px;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=true,ShadowOpacity=0.30);z-index:-1}.uv-popover-tail{border:9px solid transparent;width:0;z-index:10;position:absolute;transition:border-top-color 200ms}.uv-top .uv-popover-tail{bottom:-20px;border-top:11px solid white}.uv-bottom .uv-popover-tail{top:-20px;border-bottom:11px solid white}.uv-left .uv-popover-tail{right:-20px;border-left:11px solid white}.uv-right .uv-popover-tail{left:-20px;border-right:11px solid white}.uv-popover-loading{background:white;border-radius:5px;position:absolute;width:100%;height:100%;left:0;top:0}.uv-popover-loading-text{position:absolute;top:50%;margin-top:-0.5em;width:100%;text-align:center}.uv-popover-iframe-container{height:100%}.uv-popover-iframe{border-radius:5px;overflow:hidden}.uv-is-hidden{display:none}.uv-is-invisible{display:block !important;visibility:hidden !important}.uv-is-transitioning{display:block !important}.uv-no-transition{transition:none !important}.uv-fade{opacity:1;transition:opacity 200ms ease-out}.uv-fade.uv-is-hidden{opacity:0}.uv-scale-top,.uv-scale-top-left,.uv-scale-top-right,.uv-scale-bottom,.uv-scale-bottom-left,.uv-scale-bottom-right,.uv-scale-right,.uv-scale-right-top,.uv-scale-right-bottom,.uv-scale-left,.uv-scale-left-top,.uv-scale-left-bottom,.uv-slide-top,.uv-slide-bottom,.uv-slide-left,.uv-slide-right{opacity:1;transition:all 80ms ease-out}.uv-scale-top.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(-15%)}.uv-scale-top-left.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(-15%) translateX(-10%)}.uv-scale-top-right.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(-15%) translateX(10%)}.uv-scale-bottom.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(15%)}.uv-scale-bottom-left.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(15%) translateX(-10%)}.uv-scale-bottom-right.uv-is-hidden{opacity:0;transform:scale(0.8) translateY(15%) translateX(10%)}.uv-scale-right.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(15%)}.uv-scale-right-top.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(15%) translateY(-10%)}.uv-scale-right-bottom.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(15%) translateY(10%)}.uv-scale-left.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(-15%)}.uv-scale-left-top.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(-15%) translateY(-10%)}.uv-scale-left-bottom.uv-is-hidden{opacity:0;transform:scale(0.8) translateX(-15%) translateY(10%)}.uv-slide-top.uv-is-hidden{transform:translateY(-100%)}.uv-slide-bottom.uv-is-hidden{transform:translateY(100%)}.uv-slide-left.uv-is-hidden{transform:translateX(-100%)}.uv-slide-right.uv-is-hidden{transform:translateX(100%)}
+</style><style type="text/css" media="print">#uvTab,.uv-tray,.uv-icon,.uv-popover,.uv-bubble{display:none!important}</style><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/47/8a/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.google.com/maps-api-v3/api/js/47/8a/util.js"></script></head>
+  <body class="sbsGeo sidebar-available coordsMode" style="user-select: none;">
+    <noscript style="user-select: none;"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T6GHTWF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    
+    
+    
+
+    
+<div id="navbar-top" style="user-select: none;">
+  
+<div class="navside-btn" title="Open/close the navigation drawer" style="user-select: none;">
+  <span class="icon" style="user-select: none;">H</span>
+</div>
+
+  <a class="title" href="/" style="user-select: none;">
+    <span class="icon" style="user-select: none;">G</span>
+    <span class="title-text" style="user-select: none;">
+      Georeferencer
+    </span>
+  </a>
+
+  <div class="nav mainnav" style="user-select: none;">
+  
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/" style="user-select: none;">This map</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/georeference" class="active" style="user-select: none;">Georeference</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/view" style="user-select: none;">View</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/transcribe" style="user-select: none;">Transcribe</a>
+
+  </div>
+
+  
+  
+  
+
+  
+
+<div class="float-right pad-25" style="user-select: none;">
+  <a href="https://www.georeferencer.com/auth/widget?mode=select&amp;next=https%3A%2F%2Fwww.georeferencer.com%2Fmaps%2Fca59dd0e-f31e-4a07-9bfe-682246215837%2Fgeoreference" style="user-select: none;">Sign in</a>
+</div>
+
+
+
+  <div class="nav float-right" style="user-select: none;">
+    
+  </div>
+  <div class="nav-mobile float-right" style="user-select: none;">
+    <div id="nav-mobile-btn" style="user-select: none;">:</div>
+    <div id="nav-mobile-nav" style="user-select: none;">
+      
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/" style="user-select: none;">This map</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/georeference" class="active" style="user-select: none;">Georeference</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/view" style="user-select: none;">View</a>
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/transcribe" style="user-select: none;">Transcribe</a>
+
+
+      
+    </div>
+  </div>
+
+  
+
+
+  <div class="navside" style="user-select: none;">
+    
+    
+<a href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/compare" style="user-select: none;">
+  Compare &amp; Overlay
+</a>
+
+
+
+
+<a href="/help/" class="external" target="_blank" style="user-select: none;">Help</a>
+<a href="" data-uv-trigger="" style="user-select: none;" data-uv-scanned="true" id="uv-1">Send feedback</a>
+<a href="/" class="external" target="_blank" style="user-select: none;">Georeferencer.com</a>
+
+  </div>
+</div>
+
+<div id="modeSwitcher" style="user-select: none;"><!--
+  --><a id="switchSBS" href="#" class="" style="user-select: none;"><span class="icon" style="user-select: none;">f</span><span class="ms-label" style="user-select: none;">Side&nbsp;by&nbsp;side</span></a><!--
+  --><a id="switchOverlay" href="#" style="user-select: none;" class=""><span class="icon" style="user-select: none;">l</span><span class="ms-label" style="user-select: none;">Overlay</span></a><!--
+  --><a id="switchCoords" href="#" style="user-select: none;" class="active"><span class="icon" style="user-select: none;">x</span><span class="ms-label" style="user-select: none;">Coordinates</span></a><!--
+  --><a id="switchClip" href="#" style="user-select: none;"><span class="icon" style="user-select: none;">c</span><span class="ms-label" style="user-select: none;">Clip</span></a><!--
+  --></div>
+
+<div class="container fullscreen" style="user-select: none;">
+  <div id="mymaps-sidebar" style="user-select: none;">
+  <div id="mymaps-toggle" class="map-controls bottom-right" style="user-select: none;">
+    <a class="primary" style="user-select: none;">
+      <span class="hide" title="Hide the sidebar" style="user-select: none;">&gt;</span>
+      <span class="show" title="Show sidebar with more maps" style="user-select: none;">&lt;</span>
+    </a>
+  </div>
+  <div class="mymaps-section active" style="user-select: none;">
+    <h3 class="mymaps-section-header" style="user-select: none;">My private maps</h3>
+    <ul class="mymaps-list-type" style="user-select: none;"><!--
+      --><li data-list-type="maps" style="user-select: none;">My maps</li><!--
+      --><li data-list-type="bookmarks" class="active" style="user-select: none;">Bookmarks</li><!--
+      --><li data-list-type="history" style="user-select: none;">History</li><!--
+      --><li data-list-type="archived" style="user-select: none;">Archived</li><!--
+      --></ul>
+    <div class="mymaps-list" style="user-select: none;"></div>
+    <div class="mymaps-list-loading" style="user-select: none;">Loading...</div>
+    <div class="mymaps-list-empty" style="user-select: none;">
+      <p class="padb-1" style="user-select: none;">This list is empty.</p>
+      <a class="btn" href="/maps/new" style="user-select: none;">
+       Add own map</a>
+      <p class="padt-2" style="user-select: none;">Upload a scanned map<br style="user-select: none;"> from your computer.</p>
+    </div>
+
+  </div>
+  
+  <div class="mymaps-section mymaps-section-omo" style="user-select: none;">
+    <h3 class="mymaps-section-header mymaps-section-header-omo" style="user-select: none;">All maps</h3>
+    <ul class="mymaps-list-type" style="user-select: none;">
+      <li data-list-type="omo" style="user-select: none;"></li>
+    </ul>
+    <div class="mymaps-list" style="user-select: none;"></div>
+    <div class="mymaps-list-loading" style="user-select: none;">Loading old maps...</div>
+  </div>
+</div>
+  <div id="layerList" class="firstFixed" style="user-select: none;"><!--
+--><!--
+--><div class="layerList-item" style="user-select: none;">
+    <div class="layerList-item-info" style="user-select: none;">
+      <img style="user-select: none;" src="https://images.iiifhosting.com/iiif/960ba5f58e91ec22561eb44b18521b67089da93459de080aa4d578f61c96fd12/square/!100,100/0/default.jpg">
+      <div class="layerList-item-star star" title="Add/remove this map from bookmarks" style="user-select: none; display: none;"></div>
+      <a class="layerList-item-name" style="user-select: none;" href="https://www.georeferencer.com/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/">Participant2_2019_March2019_Shot0147.jpg</a>
+      <a href="#" class="layerList-item-remover" style="user-select: none; display: none;">X</a>
+      <div class="layerList-item-slider inOverlay goog-slider-horizontal" title="Change opacity of the layer" style="user-select: none;" role="slider" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0.66" tabindex="0"><div class="goog-slider-thumb" role="button" style="left: 0px;"></div></div>
+      <a href="https://www.georeferencer.com/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/georeference" class="layerList-item-edit inOverlay" target="_blank" title="Edit georeference" style="user-select: none;">Y</a>
+      <div class="layerList-item-props inOverlay" title="Layer properties" style="user-select: none;">P</div>
+    </div>
+    <div class="layerList-item-props-wrap inOverlay" style="user-select: none;">
+      <div class="layerList-item-clip" style="user-select: none;">
+        Map border margin
+        <div style="user-select: none;">
+          <span class="option layerList-item-clip-off" style="user-select: none;"><span class="icon" style="user-select: none;"> </span>Visible</span>
+          <span class="option layerList-item-clip-on active" style="user-select: none;"><span class="icon" style="user-select: none;"> </span>Clipped with cutline</span>
+        </div>
+      </div>
+      Transformation
+      <div class="layerList-item-trans" style="user-select: none;">
+        <span class="option" data-value="norotation" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span> Scaled</span>
+        <span class="option" data-value="noskew" style="user-select: none;">
+          <span class="icon" style="user-select: none;">s</span> Similarity</span>
+        <span class="option" data-value="affine" style="user-select: none;">
+          <span class="icon" style="user-select: none;">p</span> Affine</span>
+        <span class="option" data-value="polynomial" style="user-select: none;">
+          <span class="icon" style="user-select: none;">q</span> Polynomial</span>
+        <span class="option active" data-value="tps" style="user-select: none;">
+          <span class="icon" style="user-select: none;">t</span> TPS</span>
+      </div>
+    </div>
+    <div class="layerList-item-dragger" title="Drag to reorder the layers" style="user-select: none;"></div>
+  </div></div>
+<div id="layerList-notrans-msg" style="display: none; user-select: none;" data-title="Georeference this map first">
+
+Please use the <a href="#georeference" target="_blank" style="user-select: none;">Georeference</a> tool first and assign at least 2 valid control points.<br style="user-select: none;">
+Once it is done you can enjoy here the visualization of the map.
+
+</div>
+
+<style style="user-select: none;">
+.layerList-item:last-child:after, #layerList:empty:after {content:'Open sidebar to add maps' !important;}
+body.sidebar-opened .layerList-item:last-child:after, body.sidebar-opened #layerList:empty:after {content:'Add maps here' !important;}
+</style>
+  <div id="customMaps" class="map-layerswitcher" style="user-select: none;">
+  <div id="customMaps-thumbs" style="user-select: none;"></div>
+  <div id="customMaps-addform" class="map-layerswitcher-addform" style="user-select: none;">
+    <h3 style="user-select: none;">Add a custom map service</h3>
+
+    <input type="text" id="customMaps-input" class="inline" placeholder="Type url..." style="">
+    Type:
+    <select id="customMaps-type" style="user-select: none;">
+      <option value="tilejson" style="user-select: none;">TileJSON</option>
+      <option value="wms" style="user-select: none;">WMS</option>
+      <option value="zxy" style="user-select: none;">ZXY</option>
+    </select>
+    <input type="button" id="customMaps-addbtn" class="btn" value="Add layer" style="">
+  </div>
+</div>
+
+  <div id="old-browser-error" style="display: none; user-select: none;">
+    
+    You are using a very old browser. Please upgrade your browser before using this application.
+    
+  </div>
+  <div id="scan" class="inSBS inClip inCoords" style="user-select: none;"><div class="ol-viewport" data-view="20" style="position: relative; overflow: hidden; width: 100%; height: 100%;"><canvas class="ol-unselectable" width="1776" height="1098" style="width: 100%; height: 100%;"></canvas><div class="ol-overlaycontainer"><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 888px; top: 549px;"><div class="point"><div class="pointId">8</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 818px; top: 591px;"><div class="point"><div class="pointId">7</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 712px; top: 410px;"><div class="point"><div class="pointId">6</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 1092px; top: 205px;"><div class="point"><div class="pointId">5</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 858px; top: -25px;"><div class="point"><div class="pointId">4</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 815px; top: -96px;"><div class="point"><div class="pointId">3</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 664px; top: 84px;"><div class="point"><div class="pointId">2</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 623px; top: 12px;"><div class="point"><div class="pointId">1</div><div class="pointDragger"></div></div></div></div><div class="ol-overlaycontainer-stopevent"></div></div></div>
+  <div class="map-controls right" style="user-select: none;">
+    <a href="#" id="scan-plus" class="inSBS inClip inCoords" style="user-select: none;">+</a>
+    <a href="#" id="scan-minus" class="inSBS inClip inCoords" style="user-select: none;">-</a>
+  </div>
+  <div class="map-controls bottom-right" style="user-select: none;">
+    <a id="mapLockControl" class="inSBS" title="Synchronize position of the modern and the old map" style="user-select: none;">
+      <span style="user-select: none;">🔒</span>
+      <span style="user-select: none;">🔓</span>
+    </a>
+
+    <a id="scanRotationControl" class="inSBS ctrlAuto" title="Change rotation mode" style="user-select: none;">0
+      
+    </a>
+  </div>
+  <div id="geo" class="inSBS inOverlay adjustHideGeo" style="user-select: none;"><div class="ol-viewport" data-view="1" style="position: relative; overflow: hidden; width: 100%; height: 100%; user-select: none;"><canvas class="ol-unselectable" style="width: 100%; height: 100%; display: none; user-select: none;" width="1776" height="1098"></canvas><div class="ol-overlaycontainer" style="user-select: none;"><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 1065px; top: 754px; display: none;"><div class="point"><div class="pointId">8</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 975px; top: 802px; display: none;"><div class="point"><div class="pointId">7</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 845px; top: 573px; display: none;"><div class="point"><div class="pointId">6</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 1324px; top: 299px; display: none;"><div class="point"><div class="pointId">5</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 1024px; top: -7px; display: none;"><div class="point"><div class="pointId">4</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 968px; top: -107px; display: none;"><div class="point"><div class="pointId">3</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 769px; top: 141px; display: none;"><div class="point"><div class="pointId">2</div><div class="pointDragger"></div></div></div><div class="ol-overlay-container ol-selectable" style="position: absolute; left: 714px; top: 40px; display: none;"><div class="point"><div class="pointId">1</div><div class="pointDragger"></div></div></div></div><div class="ol-overlaycontainer-stopevent" style="user-select: none;"><div class="ol-attribution ol-unselectable ol-control ol-uncollapsible" style="user-select: none; display: none;"><ul style="user-select: none;"><li style="user-select: none;"><a href="https://openlayers.org/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAAHGAAABxgEXwfpGAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAhNQTFRF////AP//AICAgP//AFVVQECA////K1VVSbbbYL/fJ05idsTYJFtbbcjbJllmZszWWMTOIFhoHlNiZszTa9DdUcHNHlNlV8XRIVdiasrUHlZjIVZjaMnVH1RlIFRkH1RkH1ZlasvYasvXVsPQH1VkacnVa8vWIVZjIFRjVMPQa8rXIVVkXsXRsNveIFVkIFZlIVVj3eDeh6GmbMvXH1ZkIFRka8rWbMvXIFVkIFVjIFVkbMvWH1VjbMvWIFVlbcvWIFVla8vVIFVkbMvWbMvVH1VkbMvWIFVlbcvWIFVkbcvVbMvWjNPbIFVkU8LPwMzNIFVkbczWIFVkbsvWbMvXIFVkRnB8bcvW2+TkW8XRIFVkIlZlJVloJlpoKlxrLl9tMmJwOWd0Omh1RXF8TneCT3iDUHiDU8LPVMLPVcLPVcPQVsPPVsPQV8PQWMTQWsTQW8TQXMXSXsXRX4SNX8bSYMfTYcfTYsfTY8jUZcfSZsnUaIqTacrVasrVa8jTa8rWbI2VbMvWbcvWdJObdcvUdszUd8vVeJaee87Yfc3WgJyjhqGnitDYjaarldPZnrK2oNbborW5o9bbo9fbpLa6q9ndrL3ArtndscDDutzfu8fJwN7gwt7gxc/QyuHhy+HizeHi0NfX0+Pj19zb1+Tj2uXk29/e3uLg3+Lh3+bl4uXj4ufl4+fl5Ofl5ufl5ujm5+jmySDnBAAAAFp0Uk5TAAECAgMEBAYHCA0NDg4UGRogIiMmKSssLzU7PkJJT1JTVFliY2hrdHZ3foSFhYeJjY2QkpugqbG1tre5w8zQ09XY3uXn6+zx8vT09vf4+Pj5+fr6/P39/f3+gz7SsAAAAVVJREFUOMtjYKA7EBDnwCPLrObS1BRiLoJLnte6CQy8FLHLCzs2QUG4FjZ5GbcmBDDjxJBXDWxCBrb8aM4zbkIDzpLYnAcE9VXlJSWlZRU13koIeW57mGx5XjoMZEUqwxWYQaQbSzLSkYGfKFSe0QMsX5WbjgY0YS4MBplemI4BdGBW+DQ11eZiymfqQuXZIjqwyadPNoSZ4L+0FVM6e+oGI6g8a9iKNT3o8kVzNkzRg5lgl7p4wyRUL9Yt2jAxVh6mQCogae6GmflI8p0r13VFWTHBQ0rWPW7ahgWVcPm+9cuLoyy4kCJDzCm6d8PSFoh0zvQNC5OjDJhQopPPJqph1doJBUD5tnkbZiUEqaCnB3bTqLTFG1bPn71kw4b+GFdpLElKIzRxxgYgWNYc5SCENVHKeUaltHdXx0dZ8uBI1hJ2UUDgq82CM2MwKeibqAvSO7MCABq0wXEPiqWEAAAAAElFTkSuQmCC"></a></li><li><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></li><li></li></ul><button type="button" title="" style="user-select: none;"><span style="user-select: none;">i</span></button></div></div></div></div>
+  <div class="map-controls left" style="user-select: none;">
+    <a href="#" id="geo-plus" class="inSBS inOverlay" style="user-select: none;">+</a>
+    <a href="#" id="geo-minus" class="inSBS inOverlay" style="user-select: none;">-</a>
+  </div>
+  <div class="map-controls top-left" style="user-select: none;">
+    <form id="geocoderForm" class="inSBS inOverlay visible" style="user-select: none;">
+      <input type="text" id="geocoder" placeholder="Find a place..." role="combobox" aria-autocomplete="list" class="" aria-haspopup="false" aria-expanded="false" style="">
+    </form>
+    <a href="#" id="geo-search" class="inSBS inOverlay primary" title="Find a place" style="user-select: none;">Q</a><!--TODO:Javascript toogle enabled if tool is opened -->
+  </div>
+  <div class="map-controls top-left mary-6" style="user-select: none;">
+    <script style="user-select: none;">
+var CUSTOM_MAPS_DEFAULTS = null ||
+{
+  '2d': [
+    'tilejson:https://api.maptiler.com/maps/streets/256/tiles.json?key=2TngzSH50uQa6dhrAZ6r|autoscale',
+    'osm',
+    'gmaps:roadmap|AIzaSyDpoU9NXc34V2KAdHAy_guRc1ZR98DknGs',
+    'gmaps:hybrid|AIzaSyDpoU9NXc34V2KAdHAy_guRc1ZR98DknGs',
+    'gmaps:terrain|AIzaSyDpoU9NXc34V2KAdHAy_guRc1ZR98DknGs'
+  ],
+  '3d': [
+    'tilejson:https://api.maptiler.com/maps/streets/256/tiles.json?key=2TngzSH50uQa6dhrAZ6r',
+    'tilejson:https://api.maptiler.com/maps/hybrid/256/tiles.json?key=2TngzSH50uQa6dhrAZ6r',
+    'osm'
+  ]
+};
+</script>
+<a id="customMaps-control" href="#" class="mapType primary inSBS inOverlay" title="Change the base map" style="user-select: none;">r</a>
+  </div>
+  <div class="map-controls bottom-left mary-6" style="user-select: none;">
+    <a id="advancedHelpShower" class="primary" title="Show help" style="user-select: none;">?</a>
+  </div>
+
+  <div id="sbsMapSwitcher-geo" class="inSBS" style="user-select: none;"><span class="icon" style="user-select: none;">&lt;</span>&nbsp;Map&nbsp;</div>
+  <div id="sbsMapSwitcher-scan" class="inSBS" style="user-select: none;">Image&nbsp;<span class="icon" style="user-select: none;">&gt;</span></div>
+
+  <div id="overlayModeHelpBox" class="inOverlay editingOld" style="user-select: none;">
+    <div class="editingOld" style="user-select: none;">Now you edit location in the <b style="user-select: none;">old</b> map</div>
+    <div class="editingModern" style="user-select: none;">Now you edit location in the <b style="user-select: none;">modern</b> map</div>
+    Hold/Release SHIFT key to switch
+  </div>
+
+  <div id="finishDialog" class="inSBS inOverlay inClip inCoords finished" style="user-select: none;">
+    <span class="text-finished pad-1" style="user-select: none;">
+      It looks like this map is finished
+    </span>
+    <a href="#" id="finishDialog-save" class="btn showAlways" style="user-select: none;">
+      Save
+    </a>
+    <div id="finishDialog-save-popup" style="display: none; user-select: none;" data-title="Thank you!">
+      <p style="user-select: none;">
+        
+        Your work is autosaved regularly. You do not need to click on the Save button.
+        <br style="user-select: none;">
+      </p>
+      <p class="padt-1" style="user-select: none;">
+        
+        Is this map ready? What would you like to do next?
+        
+      </p>
+      <div class="finishDialog-btn" style="user-select: none;">
+        <a class="btn" href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/view" style="user-select: none;">View this map</a>
+        <img src="/static/img/production/georeference/finishdialog1.png" alt="Compare two maps" style="user-select: none;">
+      </div>
+      <div class="finishDialog-btn" style="user-select: none;">
+        <a class="btn" href="/maps/ca59dd0e-f31e-4a07-9bfe-682246215837/compare" target="_blank" style="user-select: none;">Compare &amp; Overlay</a>
+        <img src="/static/img/production/georeference/finishdialog2.png" alt="Compare swipe" style="user-select: none;">
+      </div>
+    </div>
+    
+  </div>
+
+  <div id="addMapBody" class="inClip btn" data-anonymous-alert="You need to be signed in to clip secondary maps." style="user-select: none;">+ Secondary map</div>
+  <div id="addMapBody-save" class="inClip hidden btn" data-overlap-msg="The new map body cannot overlap existing cutlines." style="user-select: none;">Save</div>
+  <div id="addMapBody-cancel" class="inClip hidden btn-orange" style="user-select: none;">Cancel</div>
+
+  <div id="coordsMode" class="inCoords shown" style="user-select: none;">
+    <div id="coordsModeShower" title="Show/hide coordinates table" style="user-select: none;">&gt;</div>
+    <div class="tabs" style="user-select: none;">
+      <ul style="user-select: none;">
+        <li class="tabs-btn active" id="btn-1" style="user-select: none;">Coordinates</li>
+        <li class="tabs-btn" id="btn-2" style="user-select: none;">Projection</li>
+        <li class="tabs-btn" id="btn-3" style="user-select: none;">Transformation</li>
+      </ul>
+      <div class="tabs-content" style="user-select: none;">
+        <div class="tabs-tab active" id="tab-1" style="user-select: none;">
+          <div class="coordinates-table" style="user-select: none;">
+            <table id="coordsModeTable" style="user-select: none;">
+              <thead style="user-select: none;">
+                <tr title="Click header to change ordering" style="user-select: none;">
+                  <th style="user-select: none;"></th>
+                  <th style="user-select: none;">X</th>
+                  <th style="user-select: none;">Y</th>
+                  <th style="user-select: none;">Error [px]</th>
+                </tr>
+              </thead>
+              <tbody style="user-select: none;"><tr><td>1</td><td>-9662058.980</td><td>3963628.699</td><td>0.73</td></tr><tr class="outlier"><td>2</td><td>-9661993.292</td><td>3963508.669</td><td>0.90</td></tr><tr class="outlier"><td>3</td><td>-9661754.426</td><td>3963803.668</td><td>0.91</td></tr><tr><td>4</td><td>-9661687.544</td><td>3963684.236</td><td>0.58</td></tr><tr><td>5</td><td>-9661329.843</td><td>3963319.368</td><td>0.55</td></tr><tr class="outlier"><td>6</td><td>-9661901.926</td><td>3962992.122</td><td>1.32</td></tr><tr class="outlier"><td>7</td><td>-9661746.663</td><td>3962718.621</td><td>1.03</td></tr><tr><td>8</td><td>-9661639.174</td><td>3962775.949</td><td>0.37</td></tr></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="tabs-tab pad-1" id="tab-2" style="user-select: none;">
+          <h2 style="user-select: none;"><span id="coordsModeProjection" style="user-select: none;">EPSG:3857</span></h2>
+        </div>
+        <div class="tabs-tab" id="tab-3" style="user-select: none;">
+          <p style="user-select: none;">Transformation is a process when the image is moved to
+            a new position which is based on adding of control points. The map
+            has to be sometimes deformed. Here you can set a default value for
+            transformation. This is used as a default transformation for
+            displaying of a map, 3D globe and Web map services (WMTS, TileJSON
+            and XYZ).</p>
+          <br style="user-select: none;">
+          <div id="coordsModeTrans" style="user-select: none;">
+            <b style="user-select: none;">Default transformation:</b>
+            <select id="coordsModeTransSelect" style="user-select: none;">
+              <option value="norotation" style="user-select: none;">Scaled</option>
+              <option value="noskew" style="user-select: none;">Similarity</option>
+              <option value="affine" selected="" style="user-select: none;">Affine</option>
+              <option value="polynomial" style="user-select: none;">Polynomial</option>
+              <option value="tps" style="user-select: none;">TPS</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="coordinputs" class="hidden" style="user-select: none;">
+    <div id="coordinputs-wgs84" class="visible" style="user-select: none;">
+      <label for="coordinput-lng" class="degrees" style="user-select: none;">Longitude</label>
+      <input type="text" id="coordinput-lng" placeholder="" class="degrees" style="">
+      <label for="coordinput-lat" class="degrees" style="user-select: none;">Latitude</label>
+      <input type="text" id="coordinput-lat" placeholder="" class="degrees" style="">
+    </div>
+    <div id="coordinputs-projected" style="user-select: none;">
+      <label for="coordinput-eas" style="user-select: none;">Easting</label>
+      <input type="text" id="coordinput-eas" placeholder="" style="">
+      <label for="coordinput-nor" style="user-select: none;">Northing</label>
+      <input type="text" id="coordinput-nor" placeholder="" style="">
+    </div>
+    <div id="coordinputs-props" title="Coordinate properties" style="user-select: none;">P</div>
+    <div id="coordinputs-props-wrap" style="user-select: none;">
+      <div id="coordinputs-props-format" style="user-select: none;">
+        Format:
+        <span class="option format active" data-value="dec" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span>Decimal
+        </span>
+        <span class="option format" data-value="dm" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span>D°M'
+        </span>
+        <span class="option format" data-value="dms" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span>D°M'S"
+        </span>
+      </div>
+      <div style="user-select: none;">
+        Coordinate system:
+        <span class="option active" id="coordinputs-props-wgs84" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span>WGS84
+        </span>
+        <span class="option" id="coordinputs-props-projected" style="user-select: none;">
+          <span class="icon" style="user-select: none;"></span><span id="coordinput-currentsrs" style="user-select: none;">EPSG:3857</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="infobox" style="user-select: none;" class="warnCollinearity warnCoverage">
+    <div class="cutlineOverlap" style="user-select: none;">
+      
+      The cutlines are not allowed to overlap!
+      
+      <span class="hint" style="user-select: none;">Fix this by dragging the cutline nodes or removing them using the delete key.</span>
+    </div>
+    <div class="pointCount" style="user-select: none;">Please, place a few more points.</div>
+    <div class="highPointCount" style="user-select: none;">
+      
+      There are already too many points on this map.
+      
+      <span class="hint" style="user-select: none;">Please improve the existing points rather than adding more.</span>
+    </div>
+    <!--
+    <div class="collinearity coverage">
+      If possible, place the points uniformly in all parts of the old map.
+    </div>
+    -->
+  </div>
+  <div style="visibility: hidden; width: 0px; height: 0px; overflow: hidden; position: absolute; user-select: none;">
+    <!-- It seems that OL3 need to be initialized inside a div that is part of the DOM, otherwise errors occur -->
+    
+    
+    <div id="loupeCross" style="user-select: none;">
+      <div class="loupeCrossVert" style="user-select: none;"></div>
+      <div class="loupeCrossHoriz" style="user-select: none;"></div>
+    </div>
+    <div id="loupeControls" class="loupeControls icon" style="user-select: none;">
+      <div class="loupeConfirm" title="Confirm autocompleted control point" style="user-select: none;">1</div>
+      <div class="loupeRemove" title="Delete control point" style="user-select: none;">X</div>
+    </div>
+  </div>
+
+  <div id="unload-confirm-msg" style="display: none; user-select: none;">
+    There are some unsaved changes, please wait for the synchronization to finish.
+  </div>
+  <div id="sync-status" style="user-select: none; display: none;" class="loaded">
+    Autosaving...
+  </div>
+
+  
+
+  <div class="tour-card-template" data-group="georeference" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/1.png" style="user-select: none;">
+    <h2 style="user-select: none;">Welcome to Georeferencer</h2>
+    <p style="user-select: none;">Here you assign a location to a scan and overlay it on top of a modern map.
+
+      Help us to give these maps a new life! It is a simple process.</p>
+  </div>
+  <div class="tour-card-template" data-group="georeference" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/2.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Find the same place - side by side</h2>
+    <p style="user-select: none;">Your target is to find the same place on the modern map and on the scan.
+
+      Click on both of them.
+
+      More points improve the precision. Quality matters.</p>
+  </div>
+  <div class="tour-card-template" data-group="georeference" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/3.gif" style="user-select: none;">
+    <h2 style="user-select: none;">After few points try Overlay &amp; Clip</h2>
+    <p style="user-select: none;">Use the Overlay to preview and adjust the position of the map overlay interactively.
+
+      The Clip mode can remove a border from the map.
+
+      Additional functions of the tool are explained under help.</p>
+  </div>
+
+  <div class="tour-card-template" data-group="advanced" data-anchor="geo-search" data-direction="left" data-classname="smaller" data-title="Search for a place" style="user-select: none;">
+    Type a place name and hit ENTER or choose from the suggested alternatives.
+  </div>
+
+  <div class="tour-card-template" data-group="advanced" data-anchor="customMaps-control" data-direction="left" data-classname="smaller" data-title="Change the base maps" style="user-select: none;">
+    Switch to one of the offered basemaps or add your own map service. We are supporting WMTS or TileJSON.
+  </div>
+
+  <div class="tour-card-template" data-group="advanced" data-anchor="mapLockControl" data-direction="right" data-classname="smaller" data-title="Lock function" style="user-select: none;">
+    Synchronize drag and zoom on both maps.
+  </div>
+
+  <div class="tour-card-template" data-group="advanced" data-anchor="scanRotationControl" data-direction="right" data-classname="smaller" data-title="Rotation tool" style="user-select: none;">
+    Change rotation of the old map.
+  </div>
+
+  <div class="tour-card-template" data-group="overlay" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/overlay1.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Switching between the scan and the modern map.</h2>
+    <p style="user-select: none;">Use the SHIFT key to toggle between the scan and the modern map. </p>
+  </div>
+
+  <div class="tour-card-template" data-group="overlay" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/overlay2.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Editing in Overlay mode</h2>
+    <p style="user-select: none;">If you see a place on an incorrect position, click on it and choose where it should appear.
+
+      The map overlay is immediately recalculated.</p>
+  </div>
+
+  <div class="tour-card-template" data-group="coordinates" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/coordinates.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Accuracy &amp; coordinates</h2>
+    <p style="user-select: none;">Get coordinates and accuracy for individual points in selected transformation and map projection.
+
+      It helps you to identify wrongly placed points</p>
+  </div>
+
+  <div class="tour-card-template" data-group="clip" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/clip1.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Clip the map borders</h2>
+    <p style="user-select: none;">Drag the circle nodes around the area to create a cutline.</p>
+  </div>
+
+  <div class="tour-card-template" data-group="clip" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/clip2.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Detail makes a difference</h2>
+    <p style="user-select: none;">Click on the point once to get in the detailed view for higher accuracy positioning.
+
+      Press DELETE key to remove the point.</p>
+  </div>
+
+  <div class="tour-card-template" data-group="clip" style="user-select: none;">
+    <img class="tour-image" data-src="/static/img/production/georeference/tours/clip3.gif" style="user-select: none;">
+    <h2 style="user-select: none;">Secondary maps</h2>
+    <p style="user-select: none;">More maps on the scan? Click on the "Secondary map" button to separate it from others.</p>
+  </div>
+</div>
+
+<script type="text/javascript" style="user-select: none;">
+  
+  var georeference = new Georeference(
+  null,
+  "/api/v1/georeferences/"
+  );
+  georeference.init(
+  "/api/v1/georeferences/8d5bc3c4-fce5-45f8-82dd-dfbe036adeb9",
+  {"omo": "//maprank.georeferencer.com/api/v1/oldmapsonline"}
+  );
+</script>
+
+
+
+    
+<script>
+  UserVoice = window.UserVoice || [];
+  (function () {
+    var uv = document.createElement('script');
+    uv.type = 'text/javascript';
+    uv.async = true;
+    uv.src = '//widget.uservoice.com/syeKPJsJIkzD89rCRwY3Q.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(uv, s)
+  })();
+
+  UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: '#448dd6'
+    }]);
+
+  
+</script>
+
+  
+<div class="ac-renderer" role="listbox" id=":0" aria-expanded="false" style="min-width: 258px; left: 35px; top: 128px; user-select: none; display: none;"><div class="ac-row" id=":1" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Ål</span><span class="suffix" style="user-select: none;">Buskerud, Norway</span><span class="type" style="user-select: none;">county</span></div><div class="ac-row" id=":2" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="suffix" style="user-select: none;">Swartland Local Municipality, West Coast District Municipality, Western Cape</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":3" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="suffix" style="user-select: none;">Baviaans Local Municipality, Sarah Baartman District Municipality, Eastern Cape</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":4" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="suffix" style="user-select: none;">Siyathemba Local Municipality, Pixley ka Seme District Municipality, Northern Cape</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":5" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="suffix" style="user-select: none;">Chennai, Chennai district, Tamil Nadu</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":6" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":7" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave</span><span class="suffix" style="user-select: none;">Menlo, Menlo, Chattooga County, Georgia</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row ac-active active" id=":8" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Birmingham</span><span class="suffix" style="user-select: none;">Jefferson County, Alabama</span><span class="type" style="user-select: none;">city</span></div><div class="ac-row" id=":9" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Birmingham</span><span class="suffix" style="user-select: none;">Oakland County, Michigan</span><span class="type" style="user-select: none;">city</span></div><div class="ac-row" id=":a" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Birmingham</span><span class="suffix" style="user-select: none;">Van Buren County, Iowa</span><span class="type" style="user-select: none;">city</span></div><div class="ac-row" id=":b" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Birmingham</span><span class="suffix" style="user-select: none;">Clay County, Missouri</span><span class="type" style="user-select: none;">city</span></div><div class="ac-row" id=":c" role="option" style="user-select: none;"><span class="name" style="user-select: none;">Birmingham Township</span><span class="suffix" style="user-select: none;">Chester County, Pennsylvania</span><span class="type" style="user-select: none;">city</span></div><div class="ac-row" id=":d" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave E</span><span class="suffix" style="user-select: none;">West Fargo, Cass County, North Dakota</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":e" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave Southwest</span><span class="suffix" style="user-select: none;">Pine Island, Olmsted County, Minnesota</span><span class="type" style="user-select: none;">street</span></div><div class="ac-row" id=":f" role="option" style="user-select: none;"><span class="name" style="user-select: none;">7th Ave Southeast</span><span class="suffix" style="user-select: none;">Plainview, Plainview, Wabasha County, Minnesota</span><span class="type" style="user-select: none;">street</span></div></div></body></html>"
