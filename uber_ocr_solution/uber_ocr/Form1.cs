@@ -2,7 +2,6 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-//using IronOcr;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
@@ -251,7 +250,6 @@ namespace uber_ocr
             this.pctData.Load(selectedItem.value);
             this.clear_text_fields();
 
-            this.clearMsg();
             // get the ocr string from the file
             if (this.read_ocr(selectedItem.value, ref strOcrText, ref strErrMsg))
             {
@@ -433,7 +431,6 @@ namespace uber_ocr
             }
             return blnRetVal;
         }
-
 
         /// <summary>
         /// parse the text from the ocr string and return a csv line
