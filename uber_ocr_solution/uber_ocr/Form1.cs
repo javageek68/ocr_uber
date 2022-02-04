@@ -56,6 +56,7 @@ namespace uber_ocr
 
         private void Init_data_table()
         {
+            this.dtCSVData = new DataTable();
             //had to define these again because the csv file lists Origin Coordinate twice
             string strColHeaders = "Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates2, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20";
             string[] strColumns = strColHeaders.Split(",".ToCharArray());
@@ -80,6 +81,7 @@ namespace uber_ocr
             this.ofdFiles.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
             if (this.ofdFiles.ShowDialog() == DialogResult.OK )
             {
+                this.Init_data_table();
                 string strFile = this.ofdFiles.FileName;
                 this.dtCSVData.ReadXml(strFile);
                 this.grdData.DataSource = this.dtCSVData;
