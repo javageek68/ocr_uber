@@ -77,7 +77,8 @@ namespace uber_ocr
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           if (this.ofdFiles.ShowDialog() == DialogResult.OK )
+            this.ofdFiles.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+            if (this.ofdFiles.ShowDialog() == DialogResult.OK )
             {
                 string strFile = this.ofdFiles.FileName;
                 this.dtCSVData.ReadXml(strFile);
@@ -87,6 +88,7 @@ namespace uber_ocr
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.sfdFiles.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
             if (this.sfdFiles.ShowDialog() == DialogResult.OK)
             {
                 string strFile = this.sfdFiles.FileName;
@@ -246,6 +248,7 @@ namespace uber_ocr
             ListItem selectedItem = (ListItem)this.lstFiles.SelectedItem;
 
             this.pctData.Load(selectedItem.value);
+            this.clear_text_fields();
 
             // get the ocr string from the file
             if (this.read_ocr(selectedItem.value, ref strOcrText, ref strErrMsg))
@@ -266,6 +269,17 @@ namespace uber_ocr
             {
                 // an error happened while reading the ocr data
                 this.handleError(strErrMsg);
+            }
+        }
+
+        /// <summary>
+        /// Clear the textboxes in the data entry form
+        /// </summary>
+        private void clear_text_fields()
+        {
+            foreach(Control ctl in this.gbForm.Controls)
+            {
+                if (typeof(TextBox) == ctl.GetType()) ctl.Text = string.Empty;
             }
         }
 
@@ -340,6 +354,7 @@ namespace uber_ocr
         /// <param name="e"></param>
         private void btnWriteCSVFile_Click(object sender, EventArgs e)
         {
+            this.sfdFiles.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
             if (this.sfdFiles.ShowDialog() == DialogResult.OK)
             {
                 string strFile = this.sfdFiles.FileName;

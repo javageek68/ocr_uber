@@ -110,7 +110,6 @@ namespace uber_ocr
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbTargetField = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.btnBrowseGeoSite = new System.Windows.Forms.Button();
             this.btnTakeSnapshot = new System.Windows.Forms.Button();
             this.btnScrapeCords = new System.Windows.Forms.Button();
@@ -905,7 +904,6 @@ namespace uber_ocr
             // 
             this.tabPage2.Controls.Add(this.cmbTargetField);
             this.tabPage2.Controls.Add(this.label35);
-            this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.btnBrowseGeoSite);
             this.tabPage2.Controls.Add(this.btnTakeSnapshot);
             this.tabPage2.Controls.Add(this.btnScrapeCords);
@@ -960,17 +958,6 @@ namespace uber_ocr
             this.label35.Size = new System.Drawing.Size(63, 13);
             this.label35.TabIndex = 12;
             this.label35.Text = "Target Field";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(525, 15);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(337, 31);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "This tab isn\'t working yet";
             // 
             // btnBrowseGeoSite
             // 
@@ -1069,7 +1056,7 @@ namespace uber_ocr
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 59);
+            this.label12.Location = new System.Drawing.Point(16, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 13;
@@ -1098,21 +1085,21 @@ namespace uber_ocr
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // exportCSVToolStripMenuItem
             // 
             this.exportCSVToolStripMenuItem.Name = "exportCSVToolStripMenuItem";
-            this.exportCSVToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exportCSVToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.exportCSVToolStripMenuItem.Text = "Export CSV";
             this.exportCSVToolStripMenuItem.Click += new System.EventHandler(this.exportCSVToolStripMenuItem_Click);
             // 
@@ -1202,7 +1189,6 @@ namespace uber_ocr
         private System.Windows.Forms.DataGridView grdCoords;
         private System.Windows.Forms.GroupBox gbBrowser;
         private System.Windows.Forms.Button btnBrowseGeoSite;
-        private System.Windows.Forms.Label label13;
         private Microsoft.Web.WebView2.WinForms.WebView2 wbBrowser;
         private System.Windows.Forms.TextBox txtDestCoords;
         private System.Windows.Forms.Label label15;
