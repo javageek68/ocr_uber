@@ -492,8 +492,8 @@ namespace uber_ocr
                     if (strLine.Trim().Length > 0) lstLines.Add(strLine);
                 }
 
-                strOriginAddress = lstLines[0].Replace("©","").Trim();
-                strDestinationAddress = lstLines[1].Replace("©", "").Trim();
+                strOriginAddress = lstLines[0].Replace("©","").Replace("@", "").Trim();
+                strDestinationAddress = lstLines[1].Replace("©", "").Replace("@", "").Trim();
 
                 //loop through each line
                 for (int intLine = 0; intLine< lstLines.Count; intLine++)
@@ -535,7 +535,7 @@ namespace uber_ocr
                     else if (strLine.Contains("Points Earned"))
                     {
                         //Points Earned on this line
-                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("point", "").Replace("points", "").Trim();
+                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("©", "").Replace("@", "").Replace("points", "").Replace("point", "").Trim();
                     }
                     else if (strLine.Contains("Fare"))
                     {
