@@ -71,9 +71,9 @@ namespace uber_ocr
         private void Init_coords_table()
         {
             this.dtCoordsData = new DataTable();
-            this.dtCoordsData.Columns.Add("id");
-            this.dtCoordsData.Columns.Add("x");
-            this.dtCoordsData.Columns.Add("y");
+            this.dtCoordsData.Columns.Add("id", typeof(int));
+            this.dtCoordsData.Columns.Add("x", typeof(string));
+            this.dtCoordsData.Columns.Add("y", typeof(string));
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -177,7 +177,8 @@ namespace uber_ocr
                 foreach (List<string> lstRow in lstTable)
                 {
                     DataRow row = this.dtCoordsData.NewRow();
-                    row["id"] = lstRow[0];
+                    // ensure id is an integer
+                    row["id"] = int.Parse(lstRow[0]);
                     row["x"] = lstRow[1];
                     row["y"] = lstRow[2];
                     this.dtCoordsData.Rows.Add(row);
@@ -535,16 +536,39 @@ namespace uber_ocr
                     else if (strLine.Contains("Points Earned"))
                     {
                         //Points Earned on this line
-                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("©", "").Replace("@", "").Replace("points", "").Replace("point", "").Trim();
+                        strPointsEarned = strLine.Replace("Points Earned", "").Replace("¢", "").Replace("©", "").Replace("@", "").Replace("O", "0").Replace("points", "").Replace("point", "").Trim();
                     }
                     else if (strLine.Contains("Fare"))
                     {
                         //Paid to you on this line
-                        strFare = strLine.Replace("Fare", "").Trim();
+                        strFare = strLine.Replace("Fare", "").Replace("v","").Trim();
                     }
 
                 }
-                strCSV = string.Format("Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20", strImageFilename, strOriginAddress, strOriginCoordinates, strDestinationAddress, strDestinationCoordinates, strFare, strDuration, strDistance, strVehicleType, strTimeRequested, strDateRequested, strPointsEarned, strOriginCoordinates, strCoordinates2, strCoordinates3, strCoordinates4, strCoordinates5, strCoordinates6, strCoordinates7, strCoordinates8, strCoordinates9, strCoordinates10, strCoordinates11, strCoordinates12, strCoordinates13, strCoordinates14, strCoordinates15, strCoordinates16, strCoordinates17, strCoordinates18, strCoordinates19, strCoordinates20);
+
+                // if we get through the ocr data and we still have some empty fields, we will try one last time to fill them.
+                // the values contain certain characters we can search for
+                if (strFare.Trim().Length == 0) strFare = this.find_row(lstLines, "$").Replace("v", "");
+                if (strDuration.Trim().Length == 0) strDuration = this.find_row(lstLines, "min");
+                if (strDistance.Trim().Length == 0) strDistance = this.find_row(lstLines, "mi");
+                if (strTimeRequested.Trim().Length == 0) strTimeRequested = this.find_row(lstLines, "PM");
+                if (strTimeRequested.Trim().Length == 0) strTimeRequested = this.find_row(lstLines, "AM");
+
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Mon");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Tue");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Wed");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Thu");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Fri");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Sat");
+                if (strDateRequested.Trim().Length == 0) strDateRequested = this.find_row(lstLines, "Sun");
+
+
+                if (strPointsEarned.Trim().Length == 0) strPointsEarned = this.find_row(lstLines, "point").Replace("¢", "").Replace("©", "").Replace("@", "").Replace("O", "0").Replace("points", "").Replace("point", "").Trim();
+                if (strVehicleType.Trim().Length == 0) strVehicleType = this.find_row(lstLines, "Delivery");
+                if (strVehicleType.Trim().Length == 0) strVehicleType = this.find_row(lstLines, "UberX");
+                if (strVehicleType.Trim().Length == 0) strVehicleType = this.find_row(lstLines, "Uberx");
+
+                //strCSV = string.Format("Image Filename, Origin Address, Origin Coordinates, Destination Address, Destination Coordinates, Fare, Duration, Distance, Vehicle Type, Time Requested, Date Requested, Points Earned, Origin Coordinates, Coordinates 2, Coordinates 3,	Coordinates 4, Coordinates 5, Coordinates 6, Coordinates 7, Coordinates 8, Coordinates 9, Coordinates 10, Coordinates 11, Coordinates 12, Coordinates 13, Coordinates 14, Coordinates 15, Coordinates 16, Coordinates 17, Coordinates 18, Coordinates 19, Coordinates 20", strImageFilename, strOriginAddress, strOriginCoordinates, strDestinationAddress, strDestinationCoordinates, strFare, strDuration, strDistance, strVehicleType, strTimeRequested, strDateRequested, strPointsEarned, strOriginCoordinates, strCoordinates2, strCoordinates3, strCoordinates4, strCoordinates5, strCoordinates6, strCoordinates7, strCoordinates8, strCoordinates9, strCoordinates10, strCoordinates11, strCoordinates12, strCoordinates13, strCoordinates14, strCoordinates15, strCoordinates16, strCoordinates17, strCoordinates18, strCoordinates19, strCoordinates20);
 
                 this.txtDateRequested.Text = strDateRequested;
                 this.txtDestAddress.Text = strDestinationAddress;
@@ -566,42 +590,124 @@ namespace uber_ocr
             return blnRetVal;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="lstLines"></param>
+        /// <param name="strSearch"></param>
+        /// <returns></returns>
+        private string find_row(List<string> lstLines, string strSearch)
+        {
+            string strRetVal = "";
+            // go through the list backwards to avoid false posivites from the larger fields.
+            for (int i = lstLines.Count-1; i >0; i--)
+            {
+                string strLine = lstLines[i];
+                if (strLine.Contains(strSearch))
+                {
+                    strRetVal = strLine;
+                    break;
+                }
+            }
+
+            return strRetVal;
+        }
+
  
         private void GrdCoords_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             DataGridViewSelectedRowCollection grdRows = this.grdCoords.SelectedRows;
-            foreach (DataGridViewRow row in grdRows)
+            
+            int intFieldIdx = -1;
+            string[] strFields = {"Origin Coords","Coordinates 2","Coordinates 3","Coordinates 4","Coordinates 5","Coordinates 6","Coordinates 7","Coordinates 8","Coordinates 9","Coordinates 10","Coordinates 11","Coordinates 12","Coordinates 13","Coordinates 14","Coordinates 15","Coordinates 16","Coordinates 17","Coordinates 18","Coordinates 19","Coordinates 20"};
+            if (this.chkAutofill.Checked == false)
             {
-                string strId = (string)row.Cells["id"].Value;
-                string strX = (string)row.Cells["x"].Value;
-                string strY = (string)row.Cells["y"].Value;
+                // assume only one is selected
+                foreach (DataGridViewRow row in grdRows)
+                {
+                    int intId = (int)row.Cells["id"].Value;
+                    string strX = (string)row.Cells["x"].Value;
+                    string strY = (string)row.Cells["y"].Value;
 
-                string strValue = string.Format("{0}, {1}", strX, strY);
+                    string strValue = string.Format("{0}, {1}", strX, strY);
 
-                string strTarg = this.cmbTargetField.Text;
-                if (strTarg == "Origin Coords") this.txtOrgCoords.Text = strValue;
-                else if (strTarg == "Dest Coords") this.txtDestCoords.Text = strValue;
-                else if (strTarg == "Coordinates 2") this.txtCoords2.Text = strValue;
-                else if (strTarg == "Coordinates 3") this.txtCoords3.Text = strValue;
-                else if (strTarg == "Coordinates 4") this.txtCoords4.Text = strValue;
-                else if (strTarg == "Coordinates 5") this.txtCoords5.Text = strValue;
-                else if (strTarg == "Coordinates 6") this.txtCoords6.Text = strValue;
-                else if (strTarg == "Coordinates 7") this.txtCoords7.Text = strValue;
-                else if (strTarg == "Coordinates 8") this.txtCoords8.Text = strValue;
-                else if (strTarg == "Coordinates 9") this.txtCoords9.Text = strValue;
-                else if (strTarg == "Coordinates 10") this.txtCoords10.Text = strValue;
-                else if (strTarg == "Coordinates 11") this.txtCoords11.Text = strValue;
-                else if (strTarg == "Coordinates 12") this.txtCoords12.Text = strValue;
-                else if (strTarg == "Coordinates 13") this.txtCoords13.Text = strValue;
-                else if (strTarg == "Coordinates 14") this.txtCoords14.Text = strValue;
-                else if (strTarg == "Coordinates 15") this.txtCoords15.Text = strValue;
-                else if (strTarg == "Coordinates 16") this.txtCoords16.Text = strValue;
-                else if (strTarg == "Coordinates 17") this.txtCoords17.Text = strValue;
-                else if (strTarg == "Coordinates 18") this.txtCoords18.Text = strValue;
-                else if (strTarg == "Coordinates 19") this.txtCoords19.Text = strValue;
-                else if (strTarg == "Coordinates 20") this.txtCoords20.Text = strValue;
-
+                    string strTarg = this.cmbTargetField.Text;
+                    TextBox textBox = this.get_textbox_from_target(strTarg);
+                    textBox.Text = strValue;
+                }
             }
+            else
+            {
+                //get the id we are looking for
+                int intId = 0;
+                foreach (DataGridViewRow row in grdRows)
+                {
+                    intId = (int)row.Cells["id"].Value;
+                }
+
+                // get this id and all higher ids from the data table
+                DataRow[] rows = this.dtCoordsData.Select(string.Format("id >= {0} ", intId));
+
+                // fill in the origin, coord 2 - n and dest
+                foreach (DataRow row in rows)
+                {
+                    // multiple selected
+                    // assume we are starting with the origin and filling them in a row
+                    intFieldIdx++;
+                    // make sure the field index does not go out of bounds
+                    if (intFieldIdx > strFields.Length - 1) intFieldIdx = strFields.Length - 1;
+                    // get the data from the data table
+                    int intId_ = (int)row["id"];
+                    string strX = (string)row["x"];
+                    string strY = (string)row["y"];
+
+                    // create the field value
+                    string strValue = string.Format("{0}, {1}", strX, strY);
+                   
+                    // get a ref to the text box
+                    TextBox textBox = this.get_textbox_from_target(strFields[intFieldIdx]);
+                    // set the value in the ui
+                    textBox.Text = strValue;
+                    // make sure dest is populated
+                    // since we update it every loop, only the last value will be kept
+                    this.txtDestCoords.Text = strValue;
+                }
+            }
+            
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="strTarg"></param>
+        /// <returns></returns>
+        private TextBox get_textbox_from_target(string strTarg)
+        {
+            TextBox textBox = null;
+            if (strTarg == "Origin Coords") textBox = this.txtOrgCoords;
+            else if (strTarg == "Dest Coords") textBox = this.txtDestCoords;
+            else if (strTarg == "Coordinates 2") textBox = this.txtCoords2;
+            else if (strTarg == "Coordinates 3") textBox = this.txtCoords3;
+            else if (strTarg == "Coordinates 4") textBox = this.txtCoords4;
+            else if (strTarg == "Coordinates 5") textBox = this.txtCoords5;
+            else if (strTarg == "Coordinates 6") textBox = this.txtCoords6;
+            else if (strTarg == "Coordinates 7") textBox = this.txtCoords7;
+            else if (strTarg == "Coordinates 8") textBox = this.txtCoords8;
+            else if (strTarg == "Coordinates 9") textBox = this.txtCoords9;
+            else if (strTarg == "Coordinates 10") textBox = this.txtCoords10;
+            else if (strTarg == "Coordinates 11") textBox = this.txtCoords11;
+            else if (strTarg == "Coordinates 12") textBox = this.txtCoords12;
+            else if (strTarg == "Coordinates 13") textBox = this.txtCoords13;
+            else if (strTarg == "Coordinates 14") textBox = this.txtCoords14;
+            else if (strTarg == "Coordinates 15") textBox = this.txtCoords15;
+            else if (strTarg == "Coordinates 16") textBox = this.txtCoords16;
+            else if (strTarg == "Coordinates 17") textBox = this.txtCoords17;
+            else if (strTarg == "Coordinates 18") textBox = this.txtCoords18;
+            else if (strTarg == "Coordinates 19") textBox = this.txtCoords19;
+            else if (strTarg == "Coordinates 20") textBox = this.txtCoords20;
+
+            return textBox;
         }
 
         private void clearMsg()

@@ -126,6 +126,7 @@ namespace uber_ocr
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ofdFiles = new System.Windows.Forms.OpenFileDialog();
+            this.chkAutofill = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdData)).BeginInit();
             this.ctmnuDataGrid.SuspendLayout();
             this.gbForm.SuspendLayout();
@@ -902,6 +903,7 @@ namespace uber_ocr
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.chkAutofill);
             this.tabPage2.Controls.Add(this.cmbTargetField);
             this.tabPage2.Controls.Add(this.label35);
             this.tabPage2.Controls.Add(this.btnBrowseGeoSite);
@@ -996,6 +998,7 @@ namespace uber_ocr
             this.grdCoords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCoords.ContextMenuStrip = this.ctmnuDataGrid;
             this.grdCoords.Location = new System.Drawing.Point(1120, 71);
+            this.grdCoords.MultiSelect = false;
             this.grdCoords.Name = "grdCoords";
             this.grdCoords.Size = new System.Drawing.Size(273, 804);
             this.grdCoords.TabIndex = 7;
@@ -1106,6 +1109,17 @@ namespace uber_ocr
             // ofdFiles
             // 
             this.ofdFiles.FileName = "openFileDialog1";
+            // 
+            // chkAutofill
+            // 
+            this.chkAutofill.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkAutofill.AutoSize = true;
+            this.chkAutofill.Location = new System.Drawing.Point(817, 29);
+            this.chkAutofill.Name = "chkAutofill";
+            this.chkAutofill.Size = new System.Drawing.Size(284, 17);
+            this.chkAutofill.TabIndex = 14;
+            this.chkAutofill.Text = "Auto fill all fields (assumes fields were selected in order)";
+            this.chkAutofill.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1240,6 +1254,7 @@ namespace uber_ocr
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exportCSVToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog ofdFiles;
+        private System.Windows.Forms.CheckBox chkAutofill;
     }
 }
 
