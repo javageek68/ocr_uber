@@ -12,17 +12,17 @@ This is a video that demonstrates how to use the application.
 
 https://www.youtube.com/watch?v=jj4SnItBT6I
 
-New feature – 
+## New feature – 
 
 Since the video was created, I added a new feature.  I noticed that copying coordinate fields one at a time was a little monotonous.  So I added a checkbox with the text “Auto fill all fields (assumes fields were selected in order)” next to the Target Field drop down box.  If you check it, then it will copy all of the fields at once.  It will copy the row you select in the data grid into the Origin Coords field.  Then it will copy each row below that into Coordinate 2, Coordinate 3 and so on until it reaches the last row of the grid.  The final entry will be copied to the Destination Coords field. Note that this features assumes that you selected the points in order from the origin to the destination. 
 
 
 
-Installation Instructions
+# Installation Instructions
 
 The code is programmed in C# and WinForms. The software can be compiled using Visual Studio 2019 or newer.
 
-Requirements
+## Requirements
 
 Installation instructions are for the command prompt (Powershell or CMD) using winget, the Windows package manager.
 
